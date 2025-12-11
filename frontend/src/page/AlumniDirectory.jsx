@@ -199,7 +199,7 @@ const AlumniDirectory = () => {
 
           {/* Search Bar with Stats */}
           <div className="mb-8">
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
               <SearchBar
                 value={filters.search}
                 onChange={(query) => setFilters(prev => ({ ...prev, search: query }))}
@@ -305,7 +305,7 @@ const AlumniDirectory = () => {
             {/* Main Content */}
             <div className="flex-1 min-w-0">
               {/* Controls Bar */}
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-6">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 mb-6">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                   <div className="text-sm font-medium text-gray-700">
                     {loading ? (

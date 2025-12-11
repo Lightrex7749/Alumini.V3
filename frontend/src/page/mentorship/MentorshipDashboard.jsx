@@ -156,7 +156,7 @@ const MentorshipDashboard = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900" data-testid="page-title">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white" data-testid="page-title">
             My Mentorship
           </h1>
           <p className="text-gray-600 mt-2">
@@ -188,7 +188,7 @@ const MentorshipDashboard = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-sm text-gray-600">Active Mentors</p>
-                      <p className="text-3xl font-bold text-gray-900 mt-1">{activeMentorships.length}</p>
+                      <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">{activeMentorships.length}</p>
                     </div>
                     <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center">
                       <Users className="h-6 w-6 text-blue-600" />

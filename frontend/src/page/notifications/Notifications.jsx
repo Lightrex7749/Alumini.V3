@@ -118,7 +118,7 @@ const Notifications = () => {
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2" data-testid="notifications-page-title">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2" data-testid="notifications-page-title">
             Notifications
           </h1>
           <p className="text-gray-600">

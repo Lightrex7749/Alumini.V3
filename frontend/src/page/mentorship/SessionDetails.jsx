@@ -144,7 +144,7 @@ const SessionDetails = () => {
           <CardContent className="p-8">
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2" data-testid="session-title">
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2" data-testid="session-title">
                   {session.agenda || 'Mentorship Session'}
                 </h1>
                 <div className="flex items-center gap-4 text-gray-600">

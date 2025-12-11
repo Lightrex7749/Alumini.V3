@@ -582,7 +582,7 @@ const Home = () => {
                         </div>
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{value.title}</h3>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{value.title}</h3>
                         <p className="text-gray-600 leading-relaxed">{value.description}</p>
                       </div>
                     </div>
@@ -600,7 +600,7 @@ const Home = () => {
           <BlurFade delay={0.1}>
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                <span className="text-gray-900">What We </span>
+                <span className="text-gray-900 dark:text-white">What We </span>
                 <GradientHeading gradient="from-purple-600 to-cyan-600">Offer</GradientHeading>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -635,7 +635,7 @@ const Home = () => {
                       <div className={`w-14 h-14 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center mb-6 shadow-lg`}>
                         <Icon className="w-7 h-7 text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
                       <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                     </div>
                   </SpotlightCard>

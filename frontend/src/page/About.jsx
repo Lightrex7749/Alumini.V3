@@ -69,7 +69,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
       <MainNavbar />
 
       {/* Hero Section */}
@@ -109,7 +109,7 @@ const About = () => {
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
                     <Icon className="w-8 h-8 text-blue-600" />
                   </div>
-                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</div>
                   <div className="text-gray-600">{stat.label}</div>
                 </GlowBorderCard>
                 </StaggerItem>
@@ -120,7 +120,7 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -128,7 +128,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Our Mission</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
               To create a vibrant ecosystem where alumni can give back, students can learn and grow, 
               and recruiters can find exceptional talent. We're building more than just a platform – 
@@ -175,7 +175,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">What We Offer</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">What We Offer</h2>
             <p className="text-lg text-gray-600">
               Comprehensive tools and features to support your professional journey
             </p>

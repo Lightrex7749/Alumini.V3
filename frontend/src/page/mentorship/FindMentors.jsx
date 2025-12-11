@@ -73,7 +73,7 @@ const FindMentors = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900" data-testid="page-title">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white" data-testid="page-title">
             Find Mentors
           </h1>
           <p className="text-gray-600 mt-2">
@@ -132,9 +132,9 @@ const FindMentors = () => {
 
         {/* Filter Panel */}
         {showFilters && (
-          <div className="mb-6 p-6 bg-white border rounded-lg shadow-sm" data-testid="filter-panel">
+          <div className="mb-6 p-6 bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-lg shadow-sm" data-testid="filter-panel">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-gray-900">Filters</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-white">Filters</h3>
               {hasActiveFilters && (
                 <Button
                   variant="ghost"

@@ -52,7 +52,7 @@ const Dashboard = () => {
             {/* Welcome Section */}
             <BlurFade delay={0.1}>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Welcome back!</h1>
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Welcome back!</h1>
               <p className="text-gray-600 mt-1">
                 Logged in as <span className="font-medium">{user?.email}</span> ({user?.role})
               </p>

@@ -115,7 +115,7 @@ const ProfileView = () => {
                 {/* Basic Info */}
                 <div className="flex-1 space-y-4">
                   <div>
-                    <h1 className="text-3xl font-bold text-gray-900">{profile.name}</h1>
+                    <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{profile.name}</h1>
                     <p className="text-xl text-gray-600 mt-2">{profile.headline}</p>
                   </div>
 
@@ -171,7 +171,7 @@ const ProfileView = () => {
               {profile.bio && (
                 <Card>
                   <CardContent className="p-6">
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">About</h2>
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">About</h2>
                     <p className="text-gray-600 leading-relaxed">{profile.bio}</p>
                   </CardContent>
                 </Card>

@@ -100,7 +100,7 @@ const MentorProfile = () => {
 
               {/* Info */}
               <div className="flex-1">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2" data-testid="mentor-name">
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2" data-testid="mentor-name">
                   {mentor.profile?.name}
                 </h1>
                 <p className="text-lg text-gray-600 mb-4">{mentor.profile?.headline}</p>
@@ -159,7 +159,7 @@ const MentorProfile = () => {
             {mentor.profile?.bio && (
               <Card>
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-bold text-gray-900 mb-4">About</h2>
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">About</h2>
                   <p className="text-gray-700 whitespace-pre-line">{mentor.profile.bio}</p>
                 </CardContent>
               </Card>
@@ -169,7 +169,7 @@ const MentorProfile = () => {
             {mentor.mentorship_approach && (
               <Card>
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-bold text-gray-900 mb-4">Mentorship Approach</h2>
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Mentorship Approach</h2>
                   <p className="text-gray-700 whitespace-pre-line">{mentor.mentorship_approach}</p>
                 </CardContent>
               </Card>
@@ -179,7 +179,7 @@ const MentorProfile = () => {
             {mentor.profile?.experience_timeline && mentor.profile.experience_timeline.length > 0 && (
               <Card>
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-bold text-gray-900 mb-4">Experience</h2>
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Experience</h2>
                   <div className="space-y-4">
                     {mentor.profile.experience_timeline.map((exp, idx) => (
                       <div key={idx} className="flex gap-4">
