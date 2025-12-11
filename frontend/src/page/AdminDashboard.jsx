@@ -89,30 +89,49 @@ const AdminDashboard = () => {
         <main className="flex-1 p-6">
           <div className="max-w-7xl mx-auto space-y-6">
             {/* Welcome Section */}
-            <div className="bg-gradient-to-r from-red-600 to-red-800 rounded-lg p-6 text-white">
-              <h1 className="text-3xl font-bold">Admin Dashboard 🛡️</h1>
-              <p className="mt-2 opacity-90">
-                System overview and management controls
-              </p>
+            <div className="relative bg-gradient-to-br from-red-600 via-pink-600 to-purple-600 rounded-2xl p-8 text-white overflow-hidden shadow-xl shadow-red-500/20">
+              {/* Animated Background */}
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-50"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-pink-400/20 rounded-full blur-2xl"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-3xl">🛡️</span>
+                  </div>
+                  <div>
+                    <h1 className="text-4xl font-bold tracking-tight">Admin Dashboard</h1>
+                    <p className="text-red-100 mt-1 text-sm">System Control Center</p>
+                  </div>
+                </div>
+                <p className="mt-4 text-red-50 text-lg max-w-2xl">
+                  Monitor platform health, manage users, and oversee all system operations from this central hub.
+                </p>
+              </div>
             </div>
 
             {/* Pending Verifications Alert */}
             {pendingVerifications.length > 0 && (
-              <Card className="border-yellow-200 bg-yellow-50">
+              <Card className="border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50 shadow-lg shadow-amber-100/50 hover:shadow-xl hover:shadow-amber-100/70 transition-all duration-300">
                 <CardHeader>
-                  <div className="flex items-center gap-2">
-                    <AlertCircle className="h-5 w-5 text-yellow-600" />
-                    <CardTitle className="text-yellow-900">
-                      {pendingVerifications.length} Pending Verification{pendingVerifications.length !== 1 ? 's' : ''}
-                    </CardTitle>
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg shadow-amber-500/30">
+                      <AlertCircle className="h-6 w-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-amber-900 text-lg font-bold">
+                        {pendingVerifications.length} Pending Verification{pendingVerifications.length !== 1 ? 's' : ''}
+                      </CardTitle>
+                      <CardDescription className="text-amber-700 text-sm">
+                        Alumni profiles waiting for verification
+                      </CardDescription>
+                    </div>
                   </div>
-                  <CardDescription className="text-yellow-700">
-                    Alumni profiles waiting for verification
-                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button asChild size="sm" className="bg-yellow-600 hover:bg-yellow-700">
-                    <Link to="/admin/verifications">Review Verifications</Link>
+                  <Button asChild size="default" className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white shadow-lg shadow-amber-500/30 font-semibold">
+                    <Link to="/admin/verifications">Review Verifications →</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -122,23 +141,41 @@ const AdminDashboard = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
+                const gradients = [
+                  'from-blue-500 to-cyan-500',
+                  'from-purple-500 to-pink-500',
+                  'from-orange-500 to-red-500',
+                  'from-green-500 to-emerald-500',
+                ];
+                const gradient = gradients[index % gradients.length];
+                
                 return (
-                  <Card key={index}>
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">
+                  <Card key={index} className="group relative overflow-hidden hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 border-gray-100">
+                    {/* Gradient Background on Hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                    
+                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 relative z-10">
+                      <CardTitle className="text-sm font-semibold text-gray-600">
                         {stat.title}
                       </CardTitle>
-                      <Icon className="h-4 w-4 text-gray-600" />
+                      <div className={`w-10 h-10 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon className="h-5 w-5 text-white" />
+                      </div>
                     </CardHeader>
-                    <CardContent>
-                      <div className="text-2xl font-bold">{stat.value}</div>
-                      <p className={`text-xs mt-1 ${
-                        stat.changeType === 'positive' ? 'text-green-600' :
-                        stat.changeType === 'negative' ? 'text-red-600' :
-                        'text-gray-600'
-                      }`}>
-                        {stat.change}
-                      </p>
+                    <CardContent className="relative z-10">
+                      <div className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2">
+                        {stat.value}
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${gradient}`}></div>
+                        <p className={`text-xs font-medium ${
+                          stat.changeType === 'positive' ? 'text-green-600' :
+                          stat.changeType === 'negative' ? 'text-red-600' :
+                          'text-gray-600'
+                        }`}>
+                          {stat.change}
+                        </p>
+                      </div>
                     </CardContent>
                   </Card>
                 );

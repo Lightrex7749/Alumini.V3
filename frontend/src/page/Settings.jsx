@@ -139,9 +139,19 @@ const Settings = () => {
         <main className="flex-1 p-6">
           <div className="max-w-7xl mx-auto space-y-6">
             {/* Header */}
-            <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-6 text-white">
-              <h1 className="text-3xl font-bold" data-testid="settings-header">Settings ⚙️</h1>
-              <p className="mt-2 opacity-90">Manage your account settings and preferences</p>
+            <div className="bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 rounded-2xl p-8 text-white relative overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px] opacity-30"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+              
+              <div className="flex items-center gap-3 relative z-10">
+                <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg">
+                  <SettingsIcon className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-4xl font-bold tracking-tight" data-testid="settings-header">Settings</h1>
+                  <p className="text-gray-300 text-lg mt-1">Manage your account settings and preferences</p>
+                </div>
+              </div>
             </div>
 
             <Tabs defaultValue="privacy" className="w-full">

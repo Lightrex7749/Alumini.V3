@@ -101,23 +101,36 @@ const AlumniDashboard = () => {
           <div className="max-w-7xl mx-auto space-y-6">
             {/* Welcome Section */}
             <BlurFade delay={0.1}>
-            <div className="bg-gradient-to-r from-purple-600 to-purple-800 rounded-lg p-6 text-white relative overflow-hidden">
-              <BorderBeam size={200} duration={8} delay={2} />
-              <div className="flex items-start justify-between relative z-10">
-                <div>
-                  <h1 className="text-3xl font-bold">Welcome back, {profile?.name || 'Alumni'}! 🎓</h1>
-                  <p className="mt-2 opacity-90">
+            <div className="relative bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 rounded-2xl p-8 text-white overflow-hidden shadow-2xl">
+              {/* Animated background */}
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-30"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-pink-400/20 rounded-full blur-2xl"></div>
+              
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between relative z-10 gap-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg">
+                      <span className="text-3xl">🎓</span>
+                    </div>
+                    <div>
+                      <h1 className="text-4xl font-bold tracking-tight">Welcome back, {profile?.name || 'Alumni'}!</h1>
+                      <p className="text-purple-100 mt-1 text-sm">Making an impact</p>
+                    </div>
+                  </div>
+                  <p className="text-purple-50 text-lg max-w-2xl">
                     Thank you for giving back to the community. Your contributions make a difference!
                   </p>
                 </div>
                 {engagementScore && engagementScore.total_score > 0 && (
                   <Badge 
-                    className="bg-white/20 hover:bg-white/30 text-white border-white/30 text-lg px-4 py-2 cursor-pointer flex items-center gap-2"
+                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border-white/30 text-lg px-5 py-3 cursor-pointer flex items-center gap-2 shadow-lg hover:scale-105 transition-transform duration-300"
                     onClick={() => navigate('/leaderboard')}
                     data-testid="engagement-points-badge"
                   >
                     <Trophy className="h-5 w-5" />
-                    {engagementScore.total_score} pts
+                    <span className="font-bold">{engagementScore.total_score}</span>
+                    <span className="text-sm">points</span>
                   </Badge>
                 )}
               </div>

@@ -32,22 +32,28 @@ const EventCard = ({ event }) => {
 
   return (
     <Card 
-      className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group"
+      className="overflow-hidden hover:shadow-2xl hover:shadow-orange-500/10 hover:-translate-y-2 transition-all duration-300 cursor-pointer group border-gray-200 bg-white"
       onClick={() => navigate(`/events/${event.id}`)}
       data-testid={`event-card-${event.id}`}
     >
       {/* Event Banner */}
       {event.banner_image && (
-        <div className="h-48 overflow-hidden bg-gray-200">
+        <div className="h-48 overflow-hidden bg-gradient-to-br from-orange-100 to-pink-100 relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-pink-500/10 group-hover:opacity-0 transition-opacity duration-300"></div>
           <img
             src={event.banner_image}
             alt={event.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
         </div>
       )}
 
-      <CardContent className="p-4">
+      <CardContent className="p-4 relative">
+        {/* Gradient accent for cards without banner */}
+        {!event.banner_image && (
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500"></div>
+        )}
+        
         {/* Event Type Badge */}
         <div className="flex items-center justify-between mb-2">
           <Badge className={getEventTypeBadgeColor(event.event_type)}>

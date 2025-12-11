@@ -120,20 +120,29 @@ const EventDetails = () => {
 
   return (
     <MainLayout>
-      <div className="container mx-auto px-4 py-8 max-w-4xl" data-testid="event-details-page">
-        {/* Back Button */}
-        <Button
-          variant="ghost"
-          className="mb-4"
-          onClick={() => navigate('/events')}
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to Events
-        </Button>
+      <div className="bg-gray-50 min-h-screen">
+        {/* Header with gradient */}
+        <div className="bg-gradient-to-br from-orange-600 via-pink-600 to-purple-600 text-white py-8 mb-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-30"></div>
+          <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+          
+          <div className="container mx-auto px-4 max-w-4xl relative z-10">
+            <Button
+              variant="ghost"
+              className="text-white hover:bg-white/20 hover:text-white"
+              onClick={() => navigate('/events')}
+            >
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Events
+            </Button>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 -mt-4 pb-8 max-w-4xl" data-testid="event-details-page">
 
         {/* Event Banner */}
         {event.banner_image && (
-          <div className="mb-6 rounded-lg overflow-hidden">
+          <div className="mb-6 rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-200">
             <img
               src={event.banner_image}
               alt={event.title}
@@ -144,7 +153,10 @@ const EventDetails = () => {
 
         {/* Event Header */}
         <div className="mb-6">
-          <div className="flex items-start justify-between mb-4">
+          <Card className="border-2 border-gray-200 shadow-lg">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500"></div>
+            <CardContent className="p-6">
+              <div className="flex items-start justify-between mb-4">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-3">
                 <Badge className={getEventTypeBadgeColor(event.event_type)}>
@@ -162,18 +174,18 @@ const EventDetails = () => {
             
             <div className="flex gap-2">
               {canEdit && (
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" className="hover:bg-orange-50 hover:border-orange-300">
                   <Edit className="h-4 w-4" />
                 </Button>
               )}
-              <Button variant="outline" size="icon" onClick={handleShare}>
+              <Button variant="outline" size="icon" onClick={handleShare} className="hover:bg-pink-50 hover:border-pink-300">
                 <Share2 className="h-4 w-4" />
               </Button>
             </div>
           </div>
 
           {/* Quick Info */}
-          <Card>
+          <Card className="mt-4">
             <CardContent className="p-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-start gap-3">
@@ -242,6 +254,8 @@ const EventDetails = () => {
               </div>
             </CardContent>
           </Card>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Event Description */}
@@ -298,6 +312,7 @@ const EventDetails = () => {
             </CardContent>
           </Card>
         )}
+      </div>
       </div>
     </MainLayout>
   );

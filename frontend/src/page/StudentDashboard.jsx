@@ -126,23 +126,36 @@ const StudentDashboard = () => {
           <div className="max-w-7xl mx-auto space-y-6">
             {/* Welcome Section */}
             <BlurFade delay={0.1}>
-            <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-6 text-white relative overflow-hidden">
-              <BorderBeam size={200} duration={8} delay={2} />
-              <div className="flex items-start justify-between relative z-10">
-                <div>
-                  <h1 className="text-3xl font-bold">Welcome back, Student! 👋</h1>
-                  <p className="mt-2 opacity-90">
+            <div className="relative bg-gradient-to-br from-blue-600 via-cyan-600 to-purple-600 rounded-2xl p-8 text-white overflow-hidden shadow-2xl">
+              {/* Animated background */}
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-30"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-cyan-400/20 rounded-full blur-2xl"></div>
+              
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between relative z-10 gap-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg">
+                      <span className="text-3xl">👋</span>
+                    </div>
+                    <div>
+                      <h1 className="text-4xl font-bold tracking-tight">Welcome back, Student!</h1>
+                      <p className="text-blue-100 mt-1 text-sm">Let's continue your journey</p>
+                    </div>
+                  </div>
+                  <p className="text-blue-50 text-lg max-w-2xl">
                     Ready to advance your career? Check out your personalized recommendations below.
                   </p>
                 </div>
                 {engagementScore && engagementScore.total_score > 0 && (
                   <Badge 
-                    className="bg-white/20 hover:bg-white/30 text-white border-white/30 text-lg px-4 py-2 cursor-pointer flex items-center gap-2"
+                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border-white/30 text-lg px-5 py-3 cursor-pointer flex items-center gap-2 shadow-lg hover:scale-105 transition-transform duration-300"
                     onClick={() => navigate('/leaderboard')}
                     data-testid="engagement-points-badge"
                   >
                     <Trophy className="h-5 w-5" />
-                    {engagementScore.total_score} pts
+                    <span className="font-bold">{engagementScore.total_score}</span>
+                    <span className="text-sm">points</span>
                   </Badge>
                 )}
               </div>
@@ -151,21 +164,37 @@ const StudentDashboard = () => {
 
             {/* Profile Completion */}
             <BlurFade delay={0.2}>
-            <Card>
+            <Card className="border-blue-100 bg-gradient-to-br from-blue-50/50 to-purple-50/50 hover:shadow-xl transition-all duration-300">
               <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  <span>Profile Completion</span>
-                  <span className="text-2xl font-bold text-blue-600">{profileCompletion}%</span>
-                </CardTitle>
-                <CardDescription>
-                  Complete your profile to unlock all features and get better recommendations
-                </CardDescription>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle className="flex items-center gap-2">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+                        <UserCheck className="h-5 w-5 text-white" />
+                      </div>
+                      <span>Profile Completion</span>
+                    </CardTitle>
+                    <CardDescription className="mt-2">
+                      Complete your profile to unlock all features and get better recommendations
+                    </CardDescription>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      {profileCompletion}%
+                    </div>
+                  </div>
+                </div>
               </CardHeader>
               <CardContent className="space-y-4">
-                <Progress value={profileCompletion} className="h-3" />
+                <div className="relative">
+                  <Progress value={profileCompletion} className="h-3" />
+                  <div className="mt-2 text-xs text-gray-500 text-center">
+                    {profileCompletion === 100 ? '🎉 Profile Complete!' : `${100 - profileCompletion}% remaining`}
+                  </div>
+                </div>
                 {profileCompletion < 100 && (
                   <div className="flex gap-2">
-                    <Button asChild size="sm" data-testid="complete-profile-btn">
+                    <Button asChild className="w-full" data-testid="complete-profile-btn">
                       <Link to="/profile">Complete Profile</Link>
                     </Button>
                   </div>
@@ -182,26 +211,46 @@ const StudentDashboard = () => {
                 <CardDescription>Get started with these common tasks</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                  <Link to="/mentorship/find" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-blue-500 transition-all" data-testid="find-mentor-btn">
-                    <Users className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Find a Mentor</div>
-                    <div className="text-xs text-gray-500 mt-1">Connect with experienced alumni</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <Link to="/mentorship/find" className="group relative p-6 border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:shadow-lg transition-all duration-300 bg-white overflow-hidden" data-testid="find-mentor-btn">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <Users className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-base font-bold text-gray-900 mb-1">Find a Mentor</div>
+                      <div className="text-sm text-gray-500">Connect with experienced alumni</div>
+                    </div>
                   </Link>
-                  <Link to="/mentorship/dashboard" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-purple-500 transition-all" data-testid="my-mentorship-btn">
-                    <UserCheck className="h-8 w-8 text-purple-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">My Mentorship</div>
-                    <div className="text-xs text-gray-500 mt-1">View sessions and requests</div>
+                  <Link to="/mentorship/dashboard" className="group relative p-6 border-2 border-gray-200 rounded-xl hover:border-purple-500 hover:shadow-lg transition-all duration-300 bg-white overflow-hidden" data-testid="my-mentorship-btn">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <UserCheck className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-base font-bold text-gray-900 mb-1">My Mentorship</div>
+                      <div className="text-sm text-gray-500">View sessions and requests</div>
+                    </div>
                   </Link>
-                  <Link to="/jobs" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-green-500 transition-all" data-testid="browse-jobs-btn">
-                    <Briefcase className="h-8 w-8 text-green-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Browse Jobs</div>
-                    <div className="text-xs text-gray-500 mt-1">Find your next opportunity</div>
+                  <Link to="/jobs" className="group relative p-6 border-2 border-gray-200 rounded-xl hover:border-green-500 hover:shadow-lg transition-all duration-300 bg-white overflow-hidden" data-testid="browse-jobs-btn">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <Briefcase className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-base font-bold text-gray-900 mb-1">Browse Jobs</div>
+                      <div className="text-sm text-gray-500">Find your next opportunity</div>
+                    </div>
                   </Link>
-                  <Link to="/jobs/my-applications" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-orange-500 transition-all" data-testid="my-applications-btn">
-                    <FileText className="h-8 w-8 text-orange-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">My Applications</div>
-                    <div className="text-xs text-gray-500 mt-1">Track your applications</div>
+                  <Link to="/jobs/my-applications" className="group relative p-6 border-2 border-gray-200 rounded-xl hover:border-orange-500 hover:shadow-lg transition-all duration-300 bg-white overflow-hidden" data-testid="my-applications-btn">
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <FileText className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-base font-bold text-gray-900 mb-1">My Applications</div>
+                      <div className="text-sm text-gray-500">Track your applications</div>
+                    </div>
                   </Link>
                 </div>
               </CardContent>

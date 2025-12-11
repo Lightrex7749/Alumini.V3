@@ -89,22 +89,63 @@ const Sidebar = () => {
   const links = getLinks();
 
   return (
-    <aside className="w-64 bg-white border-r border-gray-200 min-h-screen p-4">
-      <nav className="space-y-1">
+    <aside className="w-64 bg-gradient-to-b from-white to-gray-50/50 border-r border-gray-200/50 min-h-screen p-4 backdrop-blur-xl">
+      {/* Role Badge */}
+      <div className="mb-6 p-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-100/50">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">Role</p>
+            <p className="text-sm font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent capitalize">{user?.role || 'User'}</p>
+          </div>
+          <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/25">
+            <Activity className="w-5 h-5 text-white" />
+          </div>
+        </div>
+      </div>
+
+      <nav className="space-y-1.5">
         {links.map((link) => {
           const Icon = link.icon;
           return (
             <Link
               key={link.path}
               to={link.path}
-              className={`flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`group relative flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 overflow-hidden ${
                 isActive(link.path)
-                  ? 'bg-blue-50 text-blue-600'
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30'
                   : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
               }`}
             >
-              <Icon className="w-5 h-5" />
-              <span>{link.name}</span>
+              {/* Active Indicator */}
+              {isActive(link.path) && (
+                <span className="absolute left-0 top-0 bottom-0 w-1 bg-white rounded-r-full"></span>
+              )}
+              
+              {/* Hover Gradient Background */}
+              {!isActive(link.path) && (
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              )}
+              
+              {/* Icon with Background */}
+              <div className={`relative z-10 flex items-center justify-center w-9 h-9 rounded-lg transition-all duration-300 ${
+                isActive(link.path) 
+                  ? 'bg-white/20' 
+                  : 'bg-gray-100 group-hover:bg-blue-50'
+              }`}>
+                <Icon className={`w-5 h-5 transition-all duration-300 ${
+                  isActive(link.path) 
+                    ? 'text-white' 
+                    : 'text-gray-600 group-hover:text-blue-600'
+                }`} />
+              </div>
+              
+              {/* Text */}
+              <span className="relative z-10">{link.name}</span>
+              
+              {/* Shine Effect on Hover */}
+              {!isActive(link.path) && (
+                <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700"></span>
+              )}
             </Link>
           );
         })}

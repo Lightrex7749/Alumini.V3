@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
+import { useTheme } from '@/contexts/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import {
@@ -13,11 +14,12 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
-import { Menu, X, Bell, User, LogOut, Settings, LayoutDashboard, ChevronDown, Network, TrendingUp, Trophy, CreditCard, MapPin, BookOpen } from 'lucide-react';
+import { Menu, X, Bell, User, LogOut, Settings, LayoutDashboard, ChevronDown, Network, TrendingUp, Trophy, CreditCard, MapPin, BookOpen, Moon, Sun } from 'lucide-react';
 import NotificationBell from '@/components/notifications/NotificationBell';
 
 const MainNavbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -128,15 +130,22 @@ const MainNavbar = () => {
   };
 
   return (
-    <nav className="bg-white/80 backdrop-blur-xl border-b border-gray-200/50 sticky top-0 z-50 shadow-sm shadow-gray-100/50" data-testid="main-navbar">
+    <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-2xl border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-50 shadow-lg shadow-gray-100/20 dark:shadow-gray-900/20 transition-colors duration-300" data-testid="main-navbar">
+      {/* Gradient Line at Top */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group" data-testid="navbar-logo">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:shadow-xl group-hover:shadow-blue-500/30 transition-all duration-300 group-hover:scale-105">
-              <span className="text-white font-bold text-xl">A</span>
+            <div className="relative w-10 h-10 bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:shadow-xl group-hover:shadow-blue-500/40 transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-xl"></div>
+              <span className="text-white font-bold text-xl relative z-10">A</span>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">AlumUnity</span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">AlumUnity</span>
+              <span className="text-[10px] text-gray-400 dark:text-gray-500 -mt-1 tracking-wider uppercase">Professional Network</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -146,13 +155,19 @@ const MainNavbar = () => {
                 key={link.path}
                 to={link.path}
                 data-testid={`nav-${link.name.toLowerCase()}-link`}
-                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
+                className={`relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 overflow-hidden group ${
                   isActive(link.path)
-                    ? 'text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50 shadow-sm'
+                    ? 'text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50 shadow-md shadow-blue-100/50'
                     : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
-                {link.name}
+                {isActive(link.path) && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600"></span>
+                )}
+                <span className="relative z-10">{link.name}</span>
+                {!isActive(link.path) && (
+                  <span className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                )}
               </Link>
             ))}
             
@@ -172,7 +187,7 @@ const MainNavbar = () => {
                   <DropdownMenuLabel className="text-gray-500">Advanced Features</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   {advancedFeatures.map((feature) => (
-                    <DropdownMenuItem key={feature.path} onClick={() => navigate(feature.path)} className="rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 cursor-pointer">
+                    <DropdownMenuItem key={feature.path} onClick={() => navigate(feature.path)} className="rounded-lg !bg-transparent hover:!bg-gradient-to-r hover:!from-blue-50 hover:!to-purple-50 focus:!bg-gradient-to-r focus:!from-blue-50 focus:!to-purple-50 data-[highlighted]:!bg-gradient-to-r data-[highlighted]:!from-blue-50 data-[highlighted]:!to-purple-50 cursor-pointer transition-all duration-200">
                       <feature.icon className="mr-2 h-4 w-4 text-blue-600" />
                       {feature.name}
                     </DropdownMenuItem>
@@ -184,6 +199,21 @@ const MainNavbar = () => {
 
           {/* Right Side - Auth & User Menu */}
           <div className="flex items-center space-x-4">
+            {/* Dark Mode Toggle */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5 text-amber-500 transition-transform duration-300 hover:rotate-180" />
+              ) : (
+                <Moon className="h-5 w-5 text-slate-700 transition-transform duration-300 hover:-rotate-12" />
+              )}
+            </Button>
+
             {isAuthenticated ? (
               <>
                 {/* Notification Bell */}
@@ -209,20 +239,20 @@ const MainNavbar = () => {
                       </div>
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => navigate('/dashboard')} className="rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 cursor-pointer">
+                    <DropdownMenuItem onClick={() => navigate('/dashboard')} className="rounded-lg !bg-transparent hover:!bg-gradient-to-r hover:!from-blue-50 hover:!to-purple-50 focus:!bg-gradient-to-r focus:!from-blue-50 focus:!to-purple-50 data-[highlighted]:!bg-gradient-to-r data-[highlighted]:!from-blue-50 data-[highlighted]:!to-purple-50 cursor-pointer transition-all duration-200">
                       <LayoutDashboard className="mr-2 h-4 w-4 text-blue-600" />
                       Dashboard
                     </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => navigate('/profile')} className="rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 cursor-pointer">
+                    <DropdownMenuItem onClick={() => navigate('/profile')} className="rounded-lg !bg-transparent hover:!bg-gradient-to-r hover:!from-blue-50 hover:!to-purple-50 focus:!bg-gradient-to-r focus:!from-blue-50 focus:!to-purple-50 data-[highlighted]:!bg-gradient-to-r data-[highlighted]:!from-blue-50 data-[highlighted]:!to-purple-50 cursor-pointer transition-all duration-200">
                       <User className="mr-2 h-4 w-4 text-purple-600" />
                       My Profile
                     </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => navigate('/settings/notifications')} className="rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 cursor-pointer">
+                    <DropdownMenuItem onClick={() => navigate('/settings/notifications')} className="rounded-lg !bg-transparent hover:!bg-gradient-to-r hover:!from-blue-50 hover:!to-purple-50 focus:!bg-gradient-to-r focus:!from-blue-50 focus:!to-purple-50 data-[highlighted]:!bg-gradient-to-r data-[highlighted]:!from-blue-50 data-[highlighted]:!to-purple-50 cursor-pointer transition-all duration-200">
                       <Settings className="mr-2 h-4 w-4 text-gray-600" />
                       Notification Settings
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={handleLogout} className="rounded-lg hover:bg-red-50 cursor-pointer text-red-600">
+                    <DropdownMenuItem onClick={handleLogout} className="rounded-lg !bg-transparent hover:!bg-red-50 focus:!bg-red-50 data-[highlighted]:!bg-red-50 cursor-pointer text-red-600 transition-all duration-200">
                       <LogOut className="mr-2 h-4 w-4" />
                       Logout
                     </DropdownMenuItem>
@@ -264,58 +294,110 @@ const MainNavbar = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, height: 0, y: -20 }}
+            animate={{ opacity: 1, height: 'auto', y: 0 }}
+            exit={{ opacity: 0, height: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden border-t border-gray-200/50 bg-white/95 backdrop-blur-xl"
+            className="md:hidden border-t border-gray-200/50 dark:border-gray-700/50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-lg transition-colors duration-300"
             data-testid="mobile-menu"
           >
             <div className="px-4 pt-4 pb-6 space-y-2">
-            {navLinks.map((link) => (
-              <Link
+            {navLinks.map((link, index) => (
+              <motion.div
                 key={link.path}
-                to={link.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                  isActive(link.path)
-                    ? 'text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                }`}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.05, duration: 0.2 }}
               >
-                {link.name}
-              </Link>
+                <Link
+                  to={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                    isActive(link.path)
+                      ? 'text-blue-600 dark:text-blue-400 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 shadow-sm'
+                      : 'text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 active:scale-95'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              </motion.div>
             ))}
             
             {/* Advanced Features Section - Only show for authenticated users with features */}
             {isAuthenticated && advancedFeatures.length > 0 && (
-              <div className="pt-4 border-t border-gray-100">
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: navLinks.length * 0.05 + 0.1 }}
+                className="pt-4 border-t border-gray-100"
+              >
                 <div className="px-4 py-2 text-sm font-semibold text-gray-400 uppercase tracking-wide">
                   Advanced Features
                 </div>
-                {advancedFeatures.map((feature) => (
-                  <Link
+                {advancedFeatures.map((feature, index) => (
+                  <motion.div
                     key={feature.path}
-                    to={feature.path}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: (navLinks.length + index) * 0.05 + 0.15, duration: 0.2 }}
                   >
-                    <feature.icon className="mr-3 h-5 w-5 text-blue-600" />
-                    {feature.name}
-                  </Link>
+                    <Link
+                      to={feature.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center px-4 py-3 rounded-xl text-base font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/30 dark:hover:to-purple-900/30 transition-all duration-300 active:scale-95"
+                    >
+                      <feature.icon className="mr-3 h-5 w-5 text-blue-600" />
+                      {feature.name}
+                    </Link>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             )}
             
+            {/* Dark Mode Toggle in Mobile Menu */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: (navLinks.length + advancedFeatures.length) * 0.05 + 0.2 }}
+              className="pt-4 border-t border-gray-100 dark:border-gray-700"
+            >
+              <button
+                onClick={toggleTheme}
+                className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-base font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/30 dark:hover:to-purple-900/30 transition-all duration-300 active:scale-95"
+              >
+                <span className="flex items-center">
+                  {theme === 'dark' ? (
+                    <>
+                      <Sun className="mr-3 h-5 w-5 text-amber-500" />
+                      Light Mode
+                    </>
+                  ) : (
+                    <>
+                      <Moon className="mr-3 h-5 w-5 text-blue-600" />
+                      Dark Mode
+                    </>
+                  )}
+                </span>
+                <div className="flex h-6 w-11 items-center rounded-full bg-gray-200 dark:bg-blue-600 transition-colors">
+                  <div className={`h-5 w-5 rounded-full bg-white shadow-md transform transition-transform ${theme === 'dark' ? 'translate-x-5' : 'translate-x-1'}`} />
+                </div>
+              </button>
+            </motion.div>
+            
             {!isAuthenticated && (
-              <div className="pt-6 space-y-3">
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navLinks.length * 0.05 + 0.2 }}
+                className="pt-6 space-y-3"
+              >
                 <Button
                   variant="outline"
                   onClick={() => {
                     navigate('/login');
                     setMobileMenuOpen(false);
                   }}
-                  className="w-full py-6 text-base"
+                  className="w-full py-6 text-base transform hover:scale-[1.02] active:scale-95 transition-transform"
                 >
                   Login
                 </Button>
@@ -324,14 +406,14 @@ const MainNavbar = () => {
                     navigate('/register');
                     setMobileMenuOpen(false);
                   }}
-                  className="w-full py-6 text-base bg-gradient-to-r from-blue-600 to-purple-600"
+                  className="w-full py-6 text-base bg-gradient-to-r from-blue-600 to-purple-600 transform hover:scale-[1.02] active:scale-95 transition-transform shadow-lg hover:shadow-xl"
                 >
                   Sign Up
                 </Button>
-              </div>
+              </motion.div>
             )}
           </div>
-          </motion.div>
+        </motion.div>
         )}
       </AnimatePresence>
     </nav>

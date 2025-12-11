@@ -137,23 +137,31 @@ const JobDetails = () => {
       <MainNavbar />
       
       <main className="flex-1 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto px-4 py-8">
-          {/* Back Button */}
-          <Button
-            variant="ghost"
-            onClick={() => navigate('/jobs')}
-            className="mb-4"
-            data-testid="back-to-jobs-btn"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Jobs
-          </Button>
+        {/* Header with gradient */}
+        <div className="bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-600 text-white py-8 mb-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-30"></div>
+          <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <Button
+              variant="ghost"
+              onClick={() => navigate('/jobs')}
+              className="text-white hover:bg-white/20 hover:text-white"
+              data-testid="back-to-jobs-btn"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Jobs
+            </Button>
+          </div>
+        </div>
 
+        <div className="container mx-auto px-4 -mt-4 pb-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-6">
               {/* Job Header */}
-              <Card>
+              <Card className="border-2 border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500"></div>
                 <CardHeader>
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">

@@ -81,34 +81,66 @@ const RecruiterDashboard = () => {
         <main className="flex-1 p-6">
           <div className="max-w-7xl mx-auto space-y-6">
             {/* Welcome Section */}
-            <div className="bg-gradient-to-r from-green-600 to-green-800 rounded-lg p-6 text-white">
-              <h1 className="text-3xl font-bold">Welcome back, Recruiter! 💼</h1>
-              <p className="mt-2 opacity-90">
-                Manage your job postings and connect with talented candidates.
-              </p>
+            <div className="relative bg-gradient-to-br from-green-600 via-emerald-600 to-teal-600 rounded-2xl p-8 text-white overflow-hidden shadow-2xl">
+              {/* Animated background */}
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-30"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-teal-400/20 rounded-full blur-2xl"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-3xl">💼</span>
+                  </div>
+                  <div>
+                    <h1 className="text-4xl font-bold tracking-tight">Welcome back, Recruiter!</h1>
+                    <p className="text-green-100 mt-1 text-sm">Talent Acquisition Portal</p>
+                  </div>
+                </div>
+                <p className="text-green-50 text-lg max-w-2xl">
+                  Manage your job postings and connect with talented candidates.
+                </p>
+              </div>
             </div>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
+                const gradients = [
+                  'from-green-500 to-emerald-500',
+                  'from-blue-500 to-cyan-500',
+                  'from-purple-500 to-pink-500',
+                  'from-orange-500 to-red-500',
+                ];
+                const gradient = gradients[index % gradients.length];
+                
                 return (
-                  <Card key={index}>
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-sm font-medium">
+                  <Card key={index} className="group relative overflow-hidden hover:shadow-xl transition-all duration-300 border-gray-100">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                    
+                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 relative z-10">
+                      <CardTitle className="text-sm font-semibold text-gray-600">
                         {stat.title}
                       </CardTitle>
-                      <Icon className="h-4 w-4 text-gray-600" />
+                      <div className={`w-10 h-10 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon className="h-5 w-5 text-white" />
+                      </div>
                     </CardHeader>
-                    <CardContent>
-                      <div className="text-2xl font-bold">{stat.value}</div>
-                      <p className={`text-xs mt-1 ${
-                        stat.changeType === 'positive' ? 'text-green-600' :
-                        stat.changeType === 'negative' ? 'text-red-600' :
-                        'text-gray-600'
-                      }`}>
-                        {stat.change}
-                      </p>
+                    <CardContent className="relative z-10">
+                      <div className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2">
+                        {stat.value}
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${gradient}`}></div>
+                        <p className={`text-xs font-medium ${
+                          stat.changeType === 'positive' ? 'text-green-600' :
+                          stat.changeType === 'negative' ? 'text-red-600' :
+                          'text-gray-600'
+                        }`}>
+                          {stat.change}
+                        </p>
+                      </div>
                     </CardContent>
                   </Card>
                 );
@@ -123,20 +155,35 @@ const RecruiterDashboard = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <Link to="/jobs/post" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-green-500 transition-all">
-                    <Briefcase className="h-8 w-8 text-green-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Post New Job</div>
-                    <div className="text-xs text-gray-500 mt-1">Create a new job posting</div>
+                  <Link to="/jobs/post" className="group relative p-6 border-2 border-gray-200 rounded-xl hover:border-green-500 hover:shadow-lg transition-all duration-300 bg-white overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <Briefcase className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-base font-bold text-gray-900 mb-1">Post New Job</div>
+                      <div className="text-sm text-gray-500">Create a new job posting</div>
+                    </div>
                   </Link>
-                  <Link to="/directory" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-blue-500 transition-all">
-                    <Users className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Browse Alumni</div>
-                    <div className="text-xs text-gray-500 mt-1">Find qualified candidates</div>
+                  <Link to="/directory" className="group relative p-6 border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:shadow-lg transition-all duration-300 bg-white overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <Users className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-base font-bold text-gray-900 mb-1">Browse Alumni</div>
+                      <div className="text-sm text-gray-500">Find qualified candidates</div>
+                    </div>
                   </Link>
-                  <Link to="/jobs/all-applications" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-purple-500 transition-all" data-testid="view-all-applications-card">
-                    <FileText className="h-8 w-8 text-purple-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">View All Applications</div>
-                    <div className="text-xs text-gray-500 mt-1">Manage all job applications</div>
+                  <Link to="/jobs/all-applications" className="group relative p-6 border-2 border-gray-200 rounded-xl hover:border-purple-500 hover:shadow-lg transition-all duration-300 bg-white overflow-hidden" data-testid="view-all-applications-card">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <FileText className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-base font-bold text-gray-900 mb-1">View All Applications</div>
+                      <div className="text-sm text-gray-500">Manage all job applications</div>
+                    </div>
                   </Link>
                 </div>
               </CardContent>

@@ -67,12 +67,15 @@ const JobCard = ({ job, onApply }) => {
   };
 
   return (
-    <Card className="hover:shadow-lg transition-shadow duration-200 cursor-pointer relative" data-testid={`job-card-${job.id}`}>
+    <Card className="hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer relative border-gray-200 bg-white overflow-hidden group" data-testid={`job-card-${job.id}`}>
+      {/* Top gradient accent */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 opacity-75 group-hover:h-1.5 transition-all duration-300"></div>
+      
       {/* AI Match Score Badge */}
       {matchData && matchData.matchScore > 0 && (
-        <div className="absolute top-2 right-2 z-10">
+        <div className="absolute top-4 right-4 z-10">
           <Badge 
-            className={`flex items-center gap-1 font-semibold border ${getMatchScoreColor(matchData.matchScore)}`}
+            className={`flex items-center gap-1 font-semibold border shadow-lg ${getMatchScoreColor(matchData.matchScore)}`}
             data-testid="match-score-badge"
           >
             <Target className="h-3 w-3" />

@@ -289,7 +289,9 @@ const Profile = () => {
           <div className="max-w-7xl mx-auto space-y-6">
             {/* Profile Header Card */}
             <BlurFade delay={0.1}>
-            <Card className="relative overflow-hidden">
+            <Card className="relative overflow-hidden border-2 border-gray-200 shadow-xl">
+              {/* Gradient top border */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500"></div>
               <BorderBeam size={200} duration={10} delay={2} />
               <CardContent className="p-6 relative z-10">
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">

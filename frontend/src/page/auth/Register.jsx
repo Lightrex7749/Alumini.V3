@@ -123,7 +123,7 @@ const Register = () => {
   const passwordStrength = getPasswordStrength(watchedFields.password);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-black dark:to-gray-900 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden transition-colors duration-300">
       {/* Spotlight Effect */}
       <Spotlight className="-top-40 right-0 md:right-60 md:-top-20" fill="purple" />
       
@@ -135,7 +135,7 @@ const Register = () => {
       </div>
 
       <BlurFade delay={0.1}>
-        <Card className="w-full max-w-md relative z-10 shadow-2xl border-0 bg-white/80 backdrop-blur-xl">
+        <Card className="w-full max-w-md relative z-10 shadow-2xl border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl transition-colors duration-300">
           <CardHeader className="space-y-1">
             {/* Back Button */}
             <div className="flex items-center mb-2">
@@ -144,7 +144,7 @@ const Register = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => navigate('/')}
-                className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+                className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
                 data-testid="back-to-home-button"
               >
                 <ArrowLeft className="h-4 w-4" />

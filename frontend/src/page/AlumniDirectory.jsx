@@ -22,6 +22,7 @@ import ViewToggle from '@/components/directory/ViewToggle';
 import SortDropdown from '@/components/directory/SortDropdown';
 import SkeletonLoader from '@/components/directory/SkeletonLoader';
 import ProfileModal from '@/components/directory/ProfileModal';
+import EmptyState from '@/components/empty-states/EmptyState';
 import {
   filterAlumni,
   sortAlumni,
@@ -173,15 +174,20 @@ const AlumniDirectory = () => {
 
       <main className="flex-1">
         {/* Enhanced Header Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12 mb-8">
-          <div className="max-w-7xl mx-auto px-4">
+        <div className="bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-600 text-white py-12 mb-8 relative overflow-hidden">
+          {/* Animated background */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-30"></div>
+          <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
             <div className="flex items-center gap-4 mb-3">
-              <div className="bg-white/10 backdrop-blur-sm p-3 rounded-xl">
+              <div className="bg-white/20 backdrop-blur-sm p-3 rounded-xl shadow-lg">
                 <Users className="h-8 w-8" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold">Alumni Directory</h1>
-                <p className="text-blue-100 mt-1">
+                <h1 className="text-4xl font-bold tracking-tight">Alumni Directory</h1>
+                <p className="text-blue-100 mt-1 text-lg">
                   Connect with {results.totalResults || 0} talented alumni from various industries and locations
                 </p>
               </div>
@@ -328,20 +334,15 @@ const AlumniDirectory = () => {
               {loading ? (
                 <SkeletonLoader view={view} count={6} />
               ) : results.data.length === 0 ? (
-                // Empty State
-                <div
-                  data-testid="empty-state"
-                  className="text-center py-16 px-4 bg-white rounded-lg border-2 border-dashed border-gray-300"
-                >
-                  <Users className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    No alumni found
-                  </h3>
-                  <p className="text-gray-600 mb-6">
-                    Try adjusting your filters or search query
-                  </p>
-                  <Button onClick={handleClearFilters}>Clear All Filters</Button>
-                </div>
+                <EmptyState
+                  icon={Users}
+                  title="No alumni found"
+                  description="Try adjusting your filters or search query to find more alumni"
+                  action={{
+                    label: "Clear All Filters",
+                    onClick: handleClearFilters
+                  }}
+                />
               ) : (
                 <>
                   {/* Grid View */}

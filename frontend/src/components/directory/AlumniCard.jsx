@@ -17,34 +17,36 @@ const AlumniCard = ({ profile, onViewProfile }) => {
   return (
     <Card
       data-testid={`alumni-card-${profile.id}`}
-      className="hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer group border-gray-200 overflow-hidden"
+      className="relative group hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer border-gray-200 overflow-hidden bg-white"
       onClick={() => onViewProfile(profile)}
     >
       <CardContent className="p-6 relative">
-        {/* Decorative background gradient */}
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-br from-blue-50 to-indigo-50 -z-10"></div>
+        {/* Decorative gradient background with animation */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 -z-10 group-hover:h-28 transition-all duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
         
         {/* Avatar and Basic Info */}
         <div className="flex flex-col items-center text-center space-y-3">
           <div className="relative">
-            <Avatar className="h-24 w-24 border-4 border-white shadow-lg ring-2 ring-blue-100">
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-75 blur transition-opacity duration-300"></div>
+            <Avatar className="relative h-24 w-24 border-4 border-white shadow-xl ring-2 ring-blue-100 group-hover:ring-4 group-hover:ring-blue-300 transition-all duration-300">
               <AvatarImage src={profile.photo_url} alt={profile.name} />
-              <AvatarFallback className="text-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+              <AvatarFallback className="text-lg bg-gradient-to-br from-blue-500 to-purple-600 text-white font-bold">
                 {getInitials(profile.name)}
               </AvatarFallback>
             </Avatar>
             {profile.is_verified && (
-              <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-1 shadow-md">
+              <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-1 shadow-lg ring-2 ring-blue-500">
                 <CheckCircle2 className="h-5 w-5 text-blue-600" />
               </div>
             )}
           </div>
 
           <div className="space-y-1 w-full">
-            <h3 className="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">
+            <h3 className="font-bold text-lg text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-1">
               {profile.name}
             </h3>
-            <p className="text-sm text-gray-600 line-clamp-1">
+            <p className="text-sm text-gray-600 line-clamp-2 min-h-[2.5rem]">
               {profile.headline || profile.current_role}
             </p>
           </div>

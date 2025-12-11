@@ -17,6 +17,8 @@ import JobCard from '@/components/jobs/JobCard';
 import JobSearchBar from '@/components/jobs/JobSearchBar';
 import JobFilterSidebar from '@/components/jobs/JobFilterSidebar';
 import JobSortDropdown from '@/components/jobs/JobSortDropdown';
+import SkeletonCard from '@/components/loading/SkeletonCard';
+import EmptyState from '@/components/empty-states/EmptyState';
 import { filterJobs, sortJobs, paginateResults } from '@/services/mockJobService';
 
 const Jobs = () => {
@@ -123,25 +125,37 @@ const Jobs = () => {
       <main className="flex-1 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4 py-8">
           {/* Header */}
-          <div className="mb-6">
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-3">
-                <Briefcase className="w-8 h-8 text-blue-600" />
-                <h1 className="text-3xl font-bold">Job Opportunities</h1>
+          <div className="mb-8">
+            <div className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-600 rounded-2xl p-8 text-white overflow-hidden shadow-2xl">
+              {/* Animated background */}
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-30"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+              
+              <div className="flex items-center justify-between relative z-10">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg">
+                      <Briefcase className="w-6 h-6 text-white" />
+                    </div>
+                    <h1 className="text-4xl font-bold tracking-tight">Job Opportunities</h1>
+                  </div>
+                  <p className="text-blue-100 text-lg">
+                    Discover exciting career opportunities from our alumni network
+                  </p>
+                </div>
+                {canPostJobs && (
+                  <Button 
+                    onClick={() => navigate('/jobs/post')}
+                    className="bg-white text-blue-600 hover:bg-gray-100 shadow-lg hover:scale-105 transition-transform duration-300"
+                    size="lg"
+                    data-testid="post-job-button"
+                  >
+                    <Plus className="w-5 h-5 mr-2" />
+                    Post Job
+                  </Button>
+                )}
               </div>
-              {canPostJobs && (
-                <Button 
-                  onClick={() => navigate('/jobs/post')}
-                  data-testid="post-job-button"
-                >
-                  <Plus className="w-4 h-4 mr-2" />
-                  Post Job
-                </Button>
-              )}
             </div>
-            <p className="text-gray-600 dark:text-gray-400">
-              Discover exciting career opportunities from our alumni network
-            </p>
           </div>
 
           {/* Search and Sort */}
@@ -202,11 +216,7 @@ const Jobs = () => {
               {loading ? (
                 <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                   {[...Array(6)].map((_, i) => (
-                    <div key={i} className="bg-white dark:bg-gray-800 rounded-lg p-4 animate-pulse">
-                      <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded mb-2" />
-                      <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded mb-4" />
-                      <div className="h-20 bg-gray-200 dark:bg-gray-700 rounded" />
-                    </div>
+                    <SkeletonCard key={i} variant="job" />
                   ))}
                 </div>
               ) : results.data.length > 0 ? (
@@ -272,18 +282,15 @@ const Jobs = () => {
                   )}
                 </>
               ) : (
-                <div className="text-center py-12" data-testid="no-jobs-message">
-                  <Briefcase className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                    No jobs found
-                  </h3>
-                  <p className="text-gray-500 dark:text-gray-400 mb-4">
-                    Try adjusting your search or filters
-                  </p>
-                  <Button onClick={handleClearFilters} variant="outline">
-                    Clear Filters
-                  </Button>
-                </div>
+                <EmptyState
+                  icon={Briefcase}
+                  title="No jobs found"
+                  description="Try adjusting your search or filters to find more opportunities"
+                  action={{
+                    label: "Clear Filters",
+                    onClick: handleClearFilters
+                  }}
+                />
               )}
             </div>
           </div>

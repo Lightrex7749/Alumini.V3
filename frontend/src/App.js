@@ -6,6 +6,7 @@ import ProtectedRoute from '@/components/ProtectedRoute';
 import ErrorBoundary from '@/components/error/ErrorBoundary';
 import { OfflineIndicator } from '@/components/ui/offline-indicator';
 import { FullPageSkeleton } from '@/components/loading/SkeletonLoaders';
+import ScrollToTop from '@/components/ui/scroll-to-top';
 
 // Auth Pages (not lazy loaded - needed immediately)
 import Login from '@/page/auth/Login';
@@ -133,10 +134,26 @@ function App() {
   return (
     <ErrorBoundary>
       <AuthProvider>
-        <OfflineIndicator />
-        <Toaster position="top-right" richColors />
-        <Suspense fallback={<FullPageSkeleton />}>
-          <Routes>
+        <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+          <OfflineIndicator />
+          <ScrollToTop />
+          <Toaster 
+            position="top-right" 
+            richColors 
+            expand={true}
+            closeButton
+            toastOptions={{
+              className: 'backdrop-blur-xl dark:bg-gray-800',
+              style: {
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(226, 232, 240, 0.5)',
+                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+              },
+            }}
+          />
+          <Suspense fallback={<FullPageSkeleton />}>
+            <Routes>
           {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -689,6 +706,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         </Suspense>
+        </div>
       </AuthProvider>
     </ErrorBoundary>
   );
