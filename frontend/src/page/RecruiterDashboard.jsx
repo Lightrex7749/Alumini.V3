@@ -72,7 +72,7 @@ const RecruiterDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
       
       <div className="flex flex-1">
@@ -120,7 +120,7 @@ const RecruiterDashboard = () => {
                     <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
                     
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 relative z-10">
-                      <CardTitle className="text-sm font-semibold text-gray-600">
+                      <CardTitle className="text-sm font-semibold text-gray-600 dark:text-gray-400">
                         {stat.title}
                       </CardTitle>
                       <div className={`w-10 h-10 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
@@ -134,9 +134,9 @@ const RecruiterDashboard = () => {
                       <div className="flex items-center gap-1.5">
                         <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${gradient}`}></div>
                         <p className={`text-xs font-medium ${
-                          stat.changeType === 'positive' ? 'text-green-600' :
-                          stat.changeType === 'negative' ? 'text-red-600' :
-                          'text-gray-600'
+                          stat.changeType === 'positive' ? 'text-green-600 dark:text-green-400' :
+                          stat.changeType === 'negative' ? 'text-red-600 dark:text-red-400' :
+                          'text-gray-600 dark:text-gray-400'
                         }`}>
                           {stat.change}
                         </p>
@@ -161,8 +161,8 @@ const RecruiterDashboard = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <Briefcase className="h-6 w-6 text-white" />
                       </div>
-                      <div className="text-base font-bold text-gray-900 mb-1">Post New Job</div>
-                      <div className="text-sm text-gray-500">Create a new job posting</div>
+                      <div className="text-base font-bold text-gray-900 dark:text-white mb-1">Post New Job</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Create a new job posting</div>
                     </div>
                   </Link>
                   <Link to="/directory" className="group relative p-6 border-2 border-gray-200 dark:border-gray-700 rounded-xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800 overflow-hidden">
@@ -171,8 +171,8 @@ const RecruiterDashboard = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <Users className="h-6 w-6 text-white" />
                       </div>
-                      <div className="text-base font-bold text-gray-900 mb-1">Browse Alumni</div>
-                      <div className="text-sm text-gray-500">Find qualified candidates</div>
+                      <div className="text-base font-bold text-gray-900 dark:text-white mb-1">Browse Alumni</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Find qualified candidates</div>
                     </div>
                   </Link>
                   <Link to="/jobs/all-applications" className="group relative p-6 border-2 border-gray-200 dark:border-gray-700 rounded-xl hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800 overflow-hidden" data-testid="view-all-applications-card">
@@ -181,8 +181,8 @@ const RecruiterDashboard = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <FileText className="h-6 w-6 text-white" />
                       </div>
-                      <div className="text-base font-bold text-gray-900 mb-1">View All Applications</div>
-                      <div className="text-sm text-gray-500">Manage all job applications</div>
+                      <div className="text-base font-bold text-gray-900 dark:text-white mb-1">View All Applications</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Manage all job applications</div>
                     </div>
                   </Link>
                 </div>
@@ -200,12 +200,12 @@ const RecruiterDashboard = () => {
                   {postedJobs.length > 0 ? (
                     <div className="space-y-3">
                       {postedJobs.slice(0, 5).map(job => (
-                        <div key={job.id} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                        <div key={job.id} className="p-3 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                           <div className="flex items-start justify-between">
                             <div className="flex-1">
-                              <p className="font-medium text-sm">{job.title}</p>
-                              <p className="text-xs text-gray-500">{job.company}</p>
-                              <div className="flex gap-4 mt-2 text-xs text-gray-600">
+                              <p className="font-medium text-sm dark:text-white">{job.title}</p>
+                              <p className="text-xs text-gray-500 dark:text-gray-400">{job.company}</p>
+                              <div className="flex gap-4 mt-2 text-xs text-gray-600 dark:text-gray-400">
                                 <span>👁️ {job.views_count} views</span>
                                 <span>📄 {job.applications_count} applications</span>
                               </div>

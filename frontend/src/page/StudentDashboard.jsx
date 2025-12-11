@@ -116,7 +116,7 @@ const StudentDashboard = () => {
   const upcomingSessions = mentorshipRequests.filter(r => r.status === 'accepted').slice(0, 2);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
       
       <div className="flex flex-1">
@@ -218,8 +218,8 @@ const StudentDashboard = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <Users className="h-6 w-6 text-white" />
                       </div>
-                      <div className="text-base font-bold text-gray-900 mb-1">Find a Mentor</div>
-                      <div className="text-sm text-gray-500">Connect with experienced alumni</div>
+                      <div className="text-base font-bold text-gray-900 dark:text-white mb-1">Find a Mentor</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Connect with experienced alumni</div>
                     </div>
                   </Link>
                   <Link to="/mentorship/dashboard" className="group relative p-6 border-2 border-gray-200 dark:border-gray-700 rounded-xl hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800 overflow-hidden" data-testid="my-mentorship-btn">
@@ -248,8 +248,8 @@ const StudentDashboard = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <FileText className="h-6 w-6 text-white" />
                       </div>
-                      <div className="text-base font-bold text-gray-900 mb-1">My Applications</div>
-                      <div className="text-sm text-gray-500">Track your applications</div>
+                      <div className="text-base font-bold text-gray-900 dark:text-white mb-1">My Applications</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Track your job applications</div>
                     </div>
                   </Link>
                 </div>
