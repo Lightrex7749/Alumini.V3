@@ -173,7 +173,7 @@ const JobApplicationsManager = () => {
               </CardHeader>
               <CardContent>
                 <Tabs value={activeTab} onValueChange={setActiveTab}>
-                  <TabsList className="grid w-full grid-cols-5">
+                  <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                     <TabsTrigger value="all" data-testid="tab-all">
                       All ({stats.all})
                     </TabsTrigger>

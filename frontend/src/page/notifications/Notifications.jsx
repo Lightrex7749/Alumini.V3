@@ -165,7 +165,7 @@ const Notifications = () => {
 
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 max-w-md">
+          <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 max-w-md">
             <TabsTrigger value="all" data-testid="tab-all">All</TabsTrigger>
             <TabsTrigger value="unread" data-testid="tab-unread">
               Unread {unreadCount > 0 && `(${unreadCount})`}

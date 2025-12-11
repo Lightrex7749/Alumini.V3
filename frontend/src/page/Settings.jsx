@@ -155,7 +155,7 @@ const Settings = () => {
             </div>
 
             <Tabs defaultValue="privacy" className="w-full">
-              <TabsList className="grid w-full grid-cols-3">
+              <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3">
                 <TabsTrigger value="privacy" data-testid="tab-privacy">
                   <Eye className="w-4 h-4 mr-2" />
                   Privacy

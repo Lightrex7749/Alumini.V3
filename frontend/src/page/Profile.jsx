@@ -409,7 +409,7 @@ const Profile = () => {
             {/* Profile Content Tabs */}
             <BlurFade delay={0.2}>
             <Tabs defaultValue="about" className="w-full">
-              <TabsList className="grid w-full grid-cols-4">
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
                 <TabsTrigger value="about" data-testid="tab-about">
                   <User className="w-4 h-4 mr-2" />
                   About
