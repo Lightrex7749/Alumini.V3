@@ -12,6 +12,7 @@ import { Eye, Users, Briefcase, Calendar, TrendingUp, Award, Trophy } from 'luci
 import { Link, useNavigate } from 'react-router-dom';
 import mockData from '@/mockdata.json';
 import { BlurFade, StaggerContainer, StaggerItem, BorderBeam, SpotlightCard } from '@/components/ui/aceternity';
+import { AnimatedTabs } from '@/components/ui/animated-tabs';
 
 const AlumniDashboard = () => {
   const { user } = useAuth();
@@ -166,30 +167,89 @@ const AlumniDashboard = () => {
               })}
             </StaggerContainer>
 
-            {/* Quick Actions */}
+            {/* Quick Actions with Animated Tabs */}
             <Card>
               <CardHeader>
                 <CardTitle>Quick Actions</CardTitle>
                 <CardDescription>Manage your contributions</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <Link to="/jobs/post" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-purple-500 transition-all">
-                    <Briefcase className="h-8 w-8 text-purple-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Post a Job</div>
-                    <div className="text-xs text-gray-500 mt-1">Help students find opportunities</div>
-                  </Link>
-                  <Link to="/events/create" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-purple-500 transition-all">
-                    <Calendar className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Create Event</div>
-                    <div className="text-xs text-gray-500 mt-1">Organize workshops and meetups</div>
-                  </Link>
-                  <Link to="/mentorship/dashboard" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-purple-500 transition-all">
-                    <Users className="h-8 w-8 text-green-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Mentorship</div>
-                    <div className="text-xs text-gray-500 mt-1">Guide the next generation</div>
-                  </Link>
-                </div>
+                <AnimatedTabs
+                  tabs={[
+                    {
+                      title: "Post Job",
+                      value: "jobs",
+                      content: (
+                        <div className="p-6 border rounded-lg bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20">
+                          <Briefcase className="h-12 w-12 text-purple-600 mb-4" />
+                          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Post a Job Opening</h3>
+                          <p className="text-gray-600 dark:text-gray-400 mb-4">
+                            Help students and fellow alumni find great opportunities. Share job openings from your company.
+                          </p>
+                          <Link to="/jobs/post">
+                            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+                              Post a Job
+                            </Button>
+                          </Link>
+                        </div>
+                      )
+                    },
+                    {
+                      title: "Create Event",
+                      value: "events",
+                      content: (
+                        <div className="p-6 border rounded-lg bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20">
+                          <Calendar className="h-12 w-12 text-blue-600 mb-4" />
+                          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Organize an Event</h3>
+                          <p className="text-gray-600 dark:text-gray-400 mb-4">
+                            Host workshops, webinars, or networking events. Share your knowledge and experience with the community.
+                          </p>
+                          <Link to="/events/create">
+                            <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700">
+                              Create Event
+                            </Button>
+                          </Link>
+                        </div>
+                      )
+                    },
+                    {
+                      title: "Mentorship",
+                      value: "mentorship",
+                      content: (
+                        <div className="p-6 border rounded-lg bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20">
+                          <Users className="h-12 w-12 text-green-600 mb-4" />
+                          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Become a Mentor</h3>
+                          <p className="text-gray-600 dark:text-gray-400 mb-4">
+                            Guide students and recent graduates. Share your expertise and help shape the next generation of professionals.
+                          </p>
+                          <Link to="/mentorship/dashboard">
+                            <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700">
+                              View Mentorship
+                            </Button>
+                          </Link>
+                        </div>
+                      )
+                    },
+                    {
+                      title: "Analytics",
+                      value: "analytics",
+                      content: (
+                        <div className="p-6 border rounded-lg bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/20 dark:to-amber-950/20">
+                          <TrendingUp className="h-12 w-12 text-orange-600 mb-4" />
+                          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Your Impact</h3>
+                          <p className="text-gray-600 dark:text-gray-400 mb-4">
+                            Track your engagement, contributions, and see how you're making a difference in the community.
+                          </p>
+                          <Link to="/leaderboard">
+                            <Button className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700">
+                              View Leaderboard
+                            </Button>
+                          </Link>
+                        </div>
+                      )
+                    }
+                  ]}
+                />
               </CardContent>
             </Card>
 

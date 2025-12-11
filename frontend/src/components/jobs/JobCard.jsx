@@ -90,19 +90,21 @@ const JobCard = ({ job, onApply }) => {
           )}
 
           <CardHeader className="pb-3" onClick={() => navigate(`/jobs/${job.id}`)}>
-            <CardItem translateZ="30" className="w-full">
-              <div className="flex items-start justify-between mb-2">
-                <div className="flex-1 pr-20">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 line-clamp-1" data-testid="job-title">
-                    {job.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1" data-testid="job-company">
-                    {job.company}
-                  </p>
-                </div>
-                <Badge className={getJobTypeColor(job.job_type)} data-testid="job-type">
-                  {job.job_type}
-                </Badge>
+            {/* Job Type Badge - positioned to not overlap with match score */}
+            <CardItem translateZ="40" className="absolute top-4 left-4 z-10">
+              <Badge className={getJobTypeColor(job.job_type)} data-testid="job-type">
+                {job.job_type}
+              </Badge>
+            </CardItem>
+
+            <CardItem translateZ="30" className="w-full pt-8">
+              <div className="mb-2">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 line-clamp-1" data-testid="job-title">
+                  {job.title}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1" data-testid="job-company">
+                  {job.company}
+                </p>
               </div>
             </CardItem>
 
