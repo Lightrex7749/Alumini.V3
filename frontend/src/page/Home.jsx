@@ -1,12 +1,15 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
-import { motion } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import MainNavbar from '@/components/layout/MainNavbar';
 import Footer from '@/components/layout/Footer';
 import { ArrowRight, Users, Briefcase, Calendar, Award, MessageSquare, UserCheck, Target, Heart, TrendingUp, Network, Route, Map, CreditCard, BookOpen, BarChart3, Sparkles, Star, Zap, Globe, Shield } from 'lucide-react';
 import { BackgroundDots } from '@/components/ui/background-grids';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
+import { useRef, useState, useEffect } from 'react';
+import { AnimatedCounter } from '@/components/ui/animated-counter';
+import { FloatingParticles } from '@/components/ui/floating-particles';
 
 // Premium Aceternity UI Components
 import { 
@@ -33,10 +36,10 @@ const Home = () => {
   const navigate = useNavigate();
 
   const stats = [
-    { label: 'Active Alumni', value: '5,000+', icon: Users, gradient: 'from-blue-500 to-cyan-500' },
-    { label: 'Success Stories', value: '1,200+', icon: Award, gradient: 'from-purple-500 to-pink-500' },
-    { label: 'Job Placements', value: '800+', icon: Briefcase, gradient: 'from-orange-500 to-red-500' },
-    { label: 'Events Hosted', value: '200+', icon: Calendar, gradient: 'from-green-500 to-emerald-500' },
+    { label: 'Active Alumni', value: 5000, icon: Users, gradient: 'from-blue-500 to-cyan-500' },
+    { label: 'Success Stories', value: 1200, icon: Award, gradient: 'from-purple-500 to-pink-500' },
+    { label: 'Job Placements', value: 800, icon: Briefcase, gradient: 'from-orange-500 to-red-500' },
+    { label: 'Events Hosted', value: 200, icon: Calendar, gradient: 'from-green-500 to-emerald-500' },
   ];
 
   const features = [
@@ -192,6 +195,9 @@ const Home = () => {
 
       {/* Hero Section - Premium Design with Spotlight */}
       <section className="relative flex-1 flex items-center justify-center px-4 py-16 md:py-24 overflow-hidden min-h-[90vh]" data-testid="hero-section">
+        {/* Floating Particles */}
+        <FloatingParticles count={30} />
+        
         {/* Background Dots with Radial Fade */}
         <BackgroundDots className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-slate-50/90 via-white/80 to-blue-50/90 dark:from-gray-950/90 dark:via-gray-900/80 dark:to-blue-950/90" />
@@ -372,7 +378,9 @@ const Home = () => {
                     <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${stat.gradient} rounded-2xl mb-5 shadow-lg`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
-                    <div className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2">{stat.value}</div>
+                    <div className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-2">
+                      <AnimatedCounter end={stat.value} suffix="+" duration={2.5} />
+                    </div>
                     <div className="text-gray-500 dark:text-gray-400 font-medium">{stat.label}</div>
                   </SpotlightCard>
                 </StaggerItem>
