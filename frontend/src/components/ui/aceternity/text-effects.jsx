@@ -63,10 +63,13 @@ export const FlipWords = ({ words, duration = 3000, className }) => {
     <span className={cn("inline-block", className)}>
       <motion.span
         key={currentWord}
-        initial={{ opacity: 0, y: 20, rotateX: -90 }}
-        animate={{ opacity: 1, y: 0, rotateX: 0 }}
-        exit={{ opacity: 0, y: -20, rotateX: 90 }}
-        transition={{ duration: 0.4, ease: "easeInOut" }}
+        initial={{ opacity: 0, y: 20, scale: 0.9 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: -20, scale: 0.9 }}
+        transition={{ 
+          duration: 0.6, 
+          ease: [0.22, 1, 0.36, 1]
+        }}
         className="inline-block"
       >
         {words[currentWord]}
