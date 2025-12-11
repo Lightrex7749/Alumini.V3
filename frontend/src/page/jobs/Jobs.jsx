@@ -17,7 +17,7 @@ import JobCard from '@/components/jobs/JobCard';
 import JobSearchBar from '@/components/jobs/JobSearchBar';
 import JobFilterSidebar from '@/components/jobs/JobFilterSidebar';
 import JobSortDropdown from '@/components/jobs/JobSortDropdown';
-import SkeletonCard from '@/components/loading/SkeletonCard';
+import { LoadingState } from '@/components/loading/LoadingState';
 import EmptyState from '@/components/empty-states/EmptyState';
 import { filterJobs, sortJobs, paginateResults } from '@/services/mockJobService';
 
@@ -214,11 +214,7 @@ const Jobs = () => {
 
               {/* Job Grid */}
               {loading ? (
-                <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                  {[...Array(6)].map((_, i) => (
-                    <SkeletonCard key={i} variant="job" />
-                  ))}
-                </div>
+                <LoadingState type="jobs" count={6} />
               ) : results.data.length > 0 ? (
                 <>
                   <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4" data-testid="jobs-grid">

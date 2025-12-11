@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import SkeletonCard from '@/components/loading/SkeletonCard';
+import { LoadingState } from '@/components/loading/LoadingState';
 import EmptyState from '@/components/empty-states/EmptyState';
 import mockEventService from '@/services/mockEventService';
 import { useNavigate } from 'react-router-dom';
@@ -153,11 +153,7 @@ const Events = () => {
 
           <TabsContent value="upcoming" className="mt-6">
             {loading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[1, 2, 3, 4, 5, 6].map(i => (
-                  <SkeletonCard key={i} variant="event" />
-                ))}
-              </div>
+              <LoadingState type="events" count={6} />
             ) : events.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {events.map(event => (
@@ -179,11 +175,7 @@ const Events = () => {
 
           <TabsContent value="past" className="mt-6">
             {loading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[1, 2, 3].map(i => (
-                  <SkeletonCard key={i} variant="event" />
-                ))}
-              </div>
+              <LoadingState type="events" count={6} />
             ) : events.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {events.map(event => (

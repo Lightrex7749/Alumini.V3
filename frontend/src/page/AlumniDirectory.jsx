@@ -20,7 +20,7 @@ import AlumniCard from '@/components/directory/AlumniCard';
 import AlumniListItem from '@/components/directory/AlumniListItem';
 import ViewToggle from '@/components/directory/ViewToggle';
 import SortDropdown from '@/components/directory/SortDropdown';
-import SkeletonLoader from '@/components/directory/SkeletonLoader';
+import { LoadingState } from '@/components/loading/LoadingState';
 import ProfileModal from '@/components/directory/ProfileModal';
 import EmptyState from '@/components/empty-states/EmptyState';
 import {
@@ -332,7 +332,7 @@ const AlumniDirectory = () => {
 
               {/* Results */}
               {loading ? (
-                <SkeletonLoader view={view} count={6} />
+                <LoadingState type="alumni" count={6} />
               ) : results.data.length === 0 ? (
                 <EmptyState
                   icon={Users}
