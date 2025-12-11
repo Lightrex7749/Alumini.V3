@@ -114,7 +114,7 @@ const TalentHeatmap = () => {
             <MapPin className="h-10 w-10 text-blue-600" />
             Talent & Opportunity Heatmap
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 dark:text-gray-400 text-lg">
             Explore where our alumni are located and discover job opportunities worldwide.
           </p>
         </div>
@@ -251,7 +251,7 @@ const TalentHeatmap = () => {
           <Card>
             <CardContent className="py-20 text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto" />
-              <p className="mt-4 text-gray-600">Loading map data...</p>
+              <p className="mt-4 text-gray-600 dark:text-gray-400">Loading map data...</p>
             </CardContent>
           </Card>
         ) : (
@@ -291,7 +291,7 @@ const TalentHeatmap = () => {
                               <span className="text-sm font-bold text-gray-700 text-center px-2">
                                 {cluster.center_location.city}
                               </span>
-                              <span className="text-xs text-gray-600">Cluster</span>
+                              <span className="text-xs text-gray-600 dark:text-gray-400">Cluster</span>
                               <span className="text-lg font-bold text-blue-600">{cluster.alumni_count}</span>
                               
                               {/* Hover tooltip */}
@@ -353,14 +353,14 @@ const TalentHeatmap = () => {
                     <div className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg">
                       <Users className="h-10 w-10 text-blue-600" />
                       <div>
-                        <p className="text-sm text-gray-600">Alumni Count</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">Alumni Count</p>
                         <p className="text-3xl font-bold">{selectedLocation.alumni_count}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg">
                       <Briefcase className="h-10 w-10 text-green-600" />
                       <div>
-                        <p className="text-sm text-gray-600">Job Openings</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">Job Openings</p>
                         <p className="text-3xl font-bold">{selectedLocation.jobs_count}</p>
                       </div>
                     </div>
@@ -435,17 +435,17 @@ const TalentHeatmap = () => {
                             <div className={`w-3 h-12 rounded ${getHeatIntensity(viewMode === 'talent' ? location.alumni_count : location.jobs_count)}`} />
                             <div>
                               <h3 className="font-bold text-lg">{location.location_name}</h3>
-                              <p className="text-sm text-gray-600">{location.country}</p>
+                              <p className="text-sm text-gray-600 dark:text-gray-400">{location.country}</p>
                             </div>
                           </div>
                           <div className="text-right">
                             <div className="flex items-center gap-4">
                               <div>
-                                <p className="text-sm text-gray-600">Alumni</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">Alumni</p>
                                 <p className="text-xl font-bold text-blue-600">{location.alumni_count}</p>
                               </div>
                               <div>
-                                <p className="text-sm text-gray-600">Jobs</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">Jobs</p>
                                 <p className="text-xl font-bold text-green-600">{location.jobs_count}</p>
                               </div>
                             </div>

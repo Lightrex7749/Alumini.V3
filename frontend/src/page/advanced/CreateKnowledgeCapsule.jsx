@@ -124,7 +124,7 @@ const CreateKnowledgeCapsule = () => {
             <BookOpen className="h-10 w-10 text-blue-600" />
             Create Knowledge Capsule
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-400">
             Share your knowledge and experiences with the alumni community
           </p>
         </div>

@@ -238,7 +238,7 @@ const KnowledgeCapsules = () => {
                 <BookOpen className="h-10 w-10 text-blue-600" />
                 Knowledge Capsules
               </h1>
-              <p className="text-gray-600 text-lg">
+              <p className="text-gray-600 dark:text-gray-400 text-lg">
                 Learn from alumni experiences and share your knowledge with the community.
               </p>
             </div>
@@ -338,7 +338,7 @@ const KnowledgeCapsules = () => {
           <Card>
             <CardContent className="py-20 text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto" />
-              <p className="mt-4 text-gray-600">Loading capsules...</p>
+              <p className="mt-4 text-gray-600 dark:text-gray-400">Loading capsules...</p>
             </CardContent>
           </Card>
         ) : capsules.length === 0 ? (
@@ -346,7 +346,7 @@ const KnowledgeCapsules = () => {
             <CardContent className="py-20 text-center">
               <BookOpen className="h-16 w-16 mx-auto text-gray-300 mb-4" />
               <h3 className="text-xl font-semibold mb-2">No Capsules Found</h3>
-              <p className="text-gray-600 mb-4">Try adjusting your search criteria</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">Try adjusting your search criteria</p>
               {canCreateCapsule && (
                 <Button onClick={() => navigate('/knowledge/create')}>
                   <Plus className="mr-2 h-4 w-4" />
@@ -493,7 +493,7 @@ const KnowledgeCapsules = () => {
             <Card>
               <CardContent className="py-20 text-center">
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto" />
-                <p className="mt-4 text-gray-600">Loading personalized recommendations...</p>
+                <p className="mt-4 text-gray-600 dark:text-gray-400">Loading personalized recommendations...</p>
               </CardContent>
             </Card>
           ) : !currentUser.id ? (
@@ -591,7 +591,7 @@ const KnowledgeCapsules = () => {
                     {/* Skill Overlap */}
                     {capsule.skill_overlap && capsule.skill_overlap.length > 0 && (
                       <div className="mb-3">
-                        <div className="text-xs text-gray-600 mb-1">
+                        <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
                           Matching Skills ({capsule.skill_overlap_percentage}%):
                         </div>
                         <div className="flex flex-wrap gap-1">
@@ -610,7 +610,7 @@ const KnowledgeCapsules = () => {
                     )}
 
                     {/* Meta Info */}
-                    <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                    <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
                       <div className="flex items-center gap-1">
                         <Clock className="h-4 w-4" />
                         <span>{capsule.duration_minutes} min</span>
@@ -653,7 +653,7 @@ const KnowledgeCapsules = () => {
                             e.stopPropagation();
                             handleLike(capsule.id);
                           }}
-                          className="flex items-center gap-1 text-sm text-gray-600 hover:text-red-500 transition-colors"
+                          className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors"
                         >
                           <Heart
                             className={`h-4 w-4 ${
@@ -667,7 +667,7 @@ const KnowledgeCapsules = () => {
                             e.stopPropagation();
                             handleBookmark(capsule.id);
                           }}
-                          className="flex items-center gap-1 text-sm text-gray-600 hover:text-blue-500 transition-colors"
+                          className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
                         >
                           <Bookmark
                             className={`h-4 w-4 ${

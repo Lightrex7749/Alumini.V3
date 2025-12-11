@@ -119,7 +119,7 @@ const SkillGraph = () => {
             <Network className="h-10 w-10 text-purple-600" />
             Skill Graph Visualization
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 dark:text-gray-400 text-lg">
             Explore the network of skills, their connections, and the alumni who possess them.
           </p>
         </div>
@@ -128,7 +128,7 @@ const SkillGraph = () => {
         {recommendations.length > 0 && (
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {/* Skills You Should Learn */}
-            <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white" data-testid="skill-recommendations-panel">
+            <Card className="border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50 to-white dark:from-purple-900/30 dark:to-gray-800" data-testid="skill-recommendations-panel">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Lightbulb className="h-5 w-5 text-purple-600" />
@@ -193,7 +193,7 @@ const SkillGraph = () => {
             </Card>
 
             {/* Trending Skills */}
-            <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white" data-testid="trending-skills-panel">
+            <Card className="border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-white dark:from-blue-900/30 dark:to-gray-800" data-testid="trending-skills-panel">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Zap className="h-5 w-5 text-blue-600" />

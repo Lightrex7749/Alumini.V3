@@ -127,7 +127,7 @@ const AlumniCard = () => {
             <CreditCard className="h-10 w-10 text-blue-600" />
             Digital Alumni ID Card
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 dark:text-gray-400 text-lg">
             Your official digital alumni identification card.
           </p>
         </div>
@@ -145,7 +145,7 @@ const AlumniCard = () => {
               <Card>
                 <CardContent className="py-20 text-center">
                   <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto" />
-                  <p className="mt-4 text-gray-600">Loading your card...</p>
+                  <p className="mt-4 text-gray-600 dark:text-gray-400">Loading your card...</p>
                 </CardContent>
               </Card>
             ) : !cardData ? (
@@ -153,7 +153,7 @@ const AlumniCard = () => {
                 <CardContent className="py-20 text-center">
                   <CreditCard className="h-16 w-16 mx-auto text-gray-300 mb-4" />
                   <h3 className="text-xl font-semibold mb-2">No Card Found</h3>
-                  <p className="text-gray-600">Please contact the admin to issue your alumni card.</p>
+                  <p className="text-gray-600 dark:text-gray-400">Please contact the admin to issue your alumni card.</p>
                 </CardContent>
               </Card>
             ) : (
@@ -455,7 +455,7 @@ const AlumniCard = () => {
 
                           {/* Verification Timestamp & History */}
                           {verificationResult.aiValidation.verification_timestamp && (
-                            <div className="mt-3 pt-3 border-t border-gray-200 text-sm text-gray-600">
+                            <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-400">
                               <p className="flex items-center gap-1">
                                 <Clock className="h-4 w-4" />
                                 Verified at: {new Date(verificationResult.aiValidation.verification_timestamp).toLocaleString()}
@@ -464,7 +464,7 @@ const AlumniCard = () => {
                           )}
 
                           {verificationResult.verificationHistory && (
-                            <div className="mt-2 text-sm text-gray-600">
+                            <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                               <p>Total verifications: <strong>{verificationResult.verificationHistory.total_verifications}</strong></p>
                               {verificationResult.verificationHistory.last_verified && (
                                 <p>Last verified: {new Date(verificationResult.verificationHistory.last_verified).toLocaleDateString()}</p>

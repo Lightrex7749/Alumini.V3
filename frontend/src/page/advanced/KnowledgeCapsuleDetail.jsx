@@ -386,21 +386,21 @@ const KnowledgeCapsuleDetail = () => {
                 <div className="space-y-3">
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-gray-600">Skill Match</span>
+                      <span className="text-gray-600 dark:text-gray-400">Skill Match</span>
                       <span className="font-semibold">{aiInsights.relevance_breakdown.skill_match}%</span>
                     </div>
                     <Progress value={aiInsights.relevance_breakdown.skill_match} className="h-2" />
                   </div>
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-gray-600">Popularity</span>
+                      <span className="text-gray-600 dark:text-gray-400">Popularity</span>
                       <span className="font-semibold">{aiInsights.relevance_breakdown.popularity}%</span>
                     </div>
                     <Progress value={aiInsights.relevance_breakdown.popularity} className="h-2" />
                   </div>
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-gray-600">Engagement</span>
+                      <span className="text-gray-600 dark:text-gray-400">Engagement</span>
                       <span className="font-semibold">{aiInsights.relevance_breakdown.engagement}%</span>
                     </div>
                     <Progress value={aiInsights.relevance_breakdown.engagement} className="h-2" />
