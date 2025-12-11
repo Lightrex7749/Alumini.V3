@@ -140,7 +140,7 @@ const AdminMentorship = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
 
       <div className="flex flex-1">
@@ -319,7 +319,7 @@ const AdminMentorship = () => {
                         </thead>
                         <tbody>
                           {sessions.map((session) => (
-                            <tr key={session.id} className="border-b hover:bg-gray-50">
+                            <tr key={session.id} className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
                               <td className="py-4 text-sm">
                                 {new Date(session.scheduled_date).toLocaleString()}
                               </td>
@@ -372,7 +372,7 @@ const AdminMentorship = () => {
                         return (
                           <div
                             key={mentorProfile.id}
-                            className="border rounded-lg p-4 hover:bg-gray-50 transition-colors"
+                            className="border rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                           >
                             <div className="flex items-center justify-between">
                               <div className="flex items-center gap-4">
@@ -440,7 +440,7 @@ const AdminMentorship = () => {
           </DialogHeader>
           {selectedMentorship && (
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+              <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <div className="flex items-center gap-4">
                   <img
                     src={

@@ -228,8 +228,8 @@ const StudentDashboard = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <UserCheck className="h-6 w-6 text-white" />
                       </div>
-                      <div className="text-base font-bold text-gray-900 mb-1">My Mentorship</div>
-                      <div className="text-sm text-gray-500">View sessions and requests</div>
+                      <div className="text-base font-bold text-gray-900 dark:text-white mb-1">My Mentorship</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">View sessions and requests</div>
                     </div>
                   </Link>
                   <Link to="/jobs" className="group relative p-6 border-2 border-gray-200 dark:border-gray-700 rounded-xl hover:border-green-500 dark:hover:border-green-400 hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800 overflow-hidden" data-testid="browse-jobs-btn">
@@ -238,8 +238,8 @@ const StudentDashboard = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <Briefcase className="h-6 w-6 text-white" />
                       </div>
-                      <div className="text-base font-bold text-gray-900 mb-1">Browse Jobs</div>
-                      <div className="text-sm text-gray-500">Find your next opportunity</div>
+                      <div className="text-base font-bold text-gray-900 dark:text-white mb-1">Browse Jobs</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Find your next opportunity</div>
                     </div>
                   </Link>
                   <Link to="/jobs/my-applications" className="group relative p-6 border-2 border-gray-200 dark:border-gray-700 rounded-xl hover:border-orange-500 dark:hover:border-orange-400 hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800 overflow-hidden" data-testid="my-applications-btn">
@@ -273,7 +273,7 @@ const StudentDashboard = () => {
                         return (
                           <div 
                             key={app.id} 
-                            className="flex items-start justify-between p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                            className="flex items-start justify-between p-3 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                             onClick={() => navigate(`/jobs/${app.job_id}`)}
                             data-testid={`application-${app.id}`}
                           >

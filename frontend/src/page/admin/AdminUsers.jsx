@@ -287,7 +287,7 @@ const AdminUsers = () => {
                     </thead>
                     <tbody>
                       {filteredUsers.map((u) => (
-                        <tr key={u.id} className="border-b hover:bg-gray-50" data-testid={`user-row-${u.id}`}>
+                        <tr key={u.id} className="border-b hover:bg-gray-50 dark:hover:bg-gray-700" data-testid={`user-row-${u.id}`}>
                           <td className="py-4">
                             <Checkbox
                               checked={selectedUsers.includes(u.id)}
@@ -380,7 +380,7 @@ const AdminUsers = () => {
           </DialogHeader>
           {selectedUserDetails && (
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+              <div className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <img
                   src={
                     selectedUserDetails.profile?.photo_url ||

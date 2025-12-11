@@ -290,7 +290,11 @@ const AdminAIMonitor = () => {
                 {alerts.map(alert => (
                   <div
                     key={alert.id}
-                    className={`p-3 rounded-lg border ${alert.acknowledged ? 'bg-gray-50' : 'bg-orange-50 border-orange-200'}`}
+                    className={`p-3 rounded-lg border ${
+                      alert.acknowledged 
+                        ? 'bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600' 
+                        : 'bg-orange-50 dark:bg-orange-900/20 border-orange-200 dark:border-orange-800'
+                    }`}
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
@@ -341,7 +345,7 @@ const AdminAIMonitor = () => {
         {processingQueue && (
           <Card className="mb-6">
             <div 
-              className="p-4 flex items-center justify-between cursor-pointer hover:bg-gray-50"
+              className="p-4 flex items-center justify-between cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700"
               onClick={() => toggleSection('queue')}
             >
               <div className="flex items-center gap-2">
@@ -377,7 +381,7 @@ const AdminAIMonitor = () => {
                     <div className="text-2xl font-bold text-green-600">{processingQueue.processing}</div>
                     <div className="text-sm text-gray-600">Processing</div>
                   </div>
-                  <div className="text-center p-3 bg-gray-50 rounded-lg">
+                  <div className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                     <div className="text-2xl font-bold text-gray-600">{processingQueue.queued}</div>
                     <div className="text-sm text-gray-600">Queued</div>
                   </div>
@@ -387,7 +391,7 @@ const AdminAIMonitor = () => {
                   <div className="space-y-2">
                     <h4 className="font-medium text-gray-700 mb-2">Recent Tasks</h4>
                     {processingQueue.queue.slice(0, 5).map(task => (
-                      <div key={task.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div key={task.id} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                         <div className="flex-1">
                           <div className="flex items-center gap-2">
                             <Badge variant={task.status === 'processing' ? 'default' : 'outline'}>
@@ -432,7 +436,11 @@ const AdminAIMonitor = () => {
                   {errorLogs.map(error => (
                     <div
                       key={error.id}
-                      className={`p-3 rounded-lg border ${error.resolved ? 'bg-gray-50' : 'bg-red-50 border-red-200'}`}
+                      className={`p-3 rounded-lg border ${
+                        error.resolved 
+                          ? 'bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600' 
+                          : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800'
+                      }`}
                     >
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
@@ -528,7 +536,7 @@ const AdminAIMonitor = () => {
                     <h3 className="font-semibold mb-3">Recent Activity</h3>
                     <div className="space-y-2">
                       {systemDetails.recentActivity.slice(0, 5).map(activity => (
-                        <div key={activity.id} className="flex items-center justify-between p-2 bg-gray-50 rounded">
+                        <div key={activity.id} className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-700 rounded">
                           <div>
                             <span className="text-sm font-medium">{activity.type}</span>
                             <span className="text-xs text-gray-500 ml-2">{activity.message}</span>

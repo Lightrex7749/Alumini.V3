@@ -173,7 +173,7 @@ const AdminFileUploads = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
 
       <div className="flex flex-1">
@@ -261,7 +261,7 @@ const AdminFileUploads = () => {
                         return (
                           <tr
                             key={file.id}
-                            className="border-b hover:bg-gray-50"
+                            className="border-b hover:bg-gray-50 dark:hover:bg-gray-700"
                             data-testid={`file-row-${file.id}`}
                           >
                             <td className="py-4">

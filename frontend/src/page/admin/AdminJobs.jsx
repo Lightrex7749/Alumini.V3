@@ -120,7 +120,7 @@ const AdminJobs = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
 
       <div className="flex flex-1">
@@ -207,7 +207,7 @@ const AdminJobs = () => {
                     </thead>
                     <tbody>
                       {filteredJobs.map((job) => (
-                        <tr key={job.id} className="border-b hover:bg-gray-50" data-testid={`job-row-${job.id}`}>
+                        <tr key={job.id} className="border-b hover:bg-gray-50 dark:hover:bg-gray-700" data-testid={`job-row-${job.id}`}>
                           <td className="py-4">
                             <div>
                               <p className="font-medium">{job.title}</p>
@@ -349,7 +349,7 @@ const AdminJobs = () => {
                 </div>
               )}
 
-              <div className="grid grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg">
+              <div className="grid grid-cols-3 gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <div>
                   <p className="text-sm font-medium text-gray-600">Views</p>
                   <p className="text-lg font-bold">{selectedJob.views_count || 0}</p>

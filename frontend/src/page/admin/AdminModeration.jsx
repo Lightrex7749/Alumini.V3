@@ -102,7 +102,7 @@ const AdminModeration = () => {
   const renderContentCard = (item, contentType) => (
     <div
       key={item.id}
-      className="border rounded-lg p-4 hover:bg-gray-50 transition-colors"
+      className="border rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
       data-testid={`moderation-item-${item.id}`}
     >
       <div className="flex items-start gap-4">
@@ -159,7 +159,7 @@ const AdminModeration = () => {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
 
       <div className="flex flex-1">

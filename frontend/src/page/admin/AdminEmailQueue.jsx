@@ -187,7 +187,7 @@ const AdminEmailQueue = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
 
       <div className="flex flex-1">
@@ -276,7 +276,7 @@ const AdminEmailQueue = () => {
                         return (
                           <tr
                             key={email.id}
-                            className="border-b hover:bg-gray-50"
+                            className="border-b hover:bg-gray-50 dark:hover:bg-gray-700"
                             data-testid={`email-row-${email.id}`}
                           >
                             <td className="py-4 text-sm font-medium">{email.recipient_email}</td>
@@ -382,7 +382,7 @@ const AdminEmailQueue = () => {
 
               <div>
                 <p className="text-sm font-medium text-gray-600 mb-2">Body</p>
-                <div className="p-3 bg-gray-50 rounded border text-sm text-gray-700 whitespace-pre-wrap">
+                <div className="p-3 bg-gray-50 dark:bg-gray-700 rounded border text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
                   {selectedEmail.body}
                 </div>
               </div>

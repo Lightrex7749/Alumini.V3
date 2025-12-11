@@ -195,7 +195,7 @@ const DatasetReport = () => {
               <h3 className="text-lg font-semibold mb-4">AI Processing Triggered</h3>
               <div className="space-y-3">
                 {reportData.aiSystemsTriggered.map((system, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <div key={index} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                     <div className="flex items-center space-x-3">
                       <div className={`w-2 h-2 rounded-full ${
                         system.status === 'completed' ? 'bg-green-500' :

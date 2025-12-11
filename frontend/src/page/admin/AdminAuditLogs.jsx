@@ -212,7 +212,7 @@ const AdminAuditLogs = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
 
       <div className="flex flex-1">
@@ -298,7 +298,7 @@ const AdminAuditLogs = () => {
                     return (
                       <div
                         key={log.id}
-                        className="border rounded-lg p-4 hover:bg-gray-50 transition-colors"
+                        className="border rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                         data-testid={`log-item-${log.id}`}
                       >
                         <div className="flex items-start gap-4">
@@ -322,7 +322,7 @@ const AdminAuditLogs = () => {
                               </Badge>
                             </div>
                             {log.metadata && Object.keys(log.metadata).length > 0 && (
-                              <div className="mt-2 p-2 bg-gray-50 rounded text-xs">
+                              <div className="mt-2 p-2 bg-gray-50 dark:bg-gray-700 rounded text-xs">
                                 <span className="font-medium text-gray-600">Metadata:</span>
                                 <code className="ml-2 text-gray-700">
                                   {JSON.stringify(log.metadata)}

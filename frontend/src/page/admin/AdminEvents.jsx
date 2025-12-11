@@ -122,7 +122,7 @@ const AdminEvents = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
 
       <div className="flex flex-1">
@@ -207,7 +207,7 @@ const AdminEvents = () => {
                     </thead>
                     <tbody>
                       {filteredEvents.map((event) => (
-                        <tr key={event.id} className="border-b hover:bg-gray-50" data-testid={`event-row-${event.id}`}>
+                        <tr key={event.id} className="border-b hover:bg-gray-50 dark:hover:bg-gray-700" data-testid={`event-row-${event.id}`}>
                           <td className="py-4 font-medium">{event.title}</td>
                           <td className="py-4">
                             <Badge variant="outline" className="capitalize">
@@ -341,7 +341,7 @@ const AdminEvents = () => {
                 </div>
               )}
 
-              <div className="p-4 bg-gray-50 rounded-lg">
+              <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <p className="text-sm font-medium text-gray-600">Created By</p>
                 <p className="text-sm">{selectedEvent.creator?.email || 'Unknown'}</p>
                 <p className="text-xs text-gray-500 mt-1">on {new Date(selectedEvent.created_at).toLocaleDateString()}</p>

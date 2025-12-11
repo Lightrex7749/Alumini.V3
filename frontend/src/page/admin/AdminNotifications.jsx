@@ -220,7 +220,7 @@ const AdminNotifications = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
 
       <div className="flex flex-1">
@@ -321,7 +321,7 @@ const AdminNotifications = () => {
                       {filteredNotifications.map((notification) => (
                         <tr
                           key={notification.id}
-                          className="border-b hover:bg-gray-50"
+                          className="border-b hover:bg-gray-50 dark:hover:bg-gray-700"
                           data-testid={`notification-row-${notification.id}`}
                         >
                           <td className="py-4">

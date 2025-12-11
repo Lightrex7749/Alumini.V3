@@ -122,7 +122,7 @@ const AdminVerifications = () => {
                       return (
                         <div
                           key={profile.id}
-                          className="border rounded-lg p-4 hover:bg-gray-50 transition-colors"
+                          className="border rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                           data-testid={`verification-item-${profile.id}`}
                         >
                           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">

@@ -124,7 +124,7 @@ const AdminKnowledgeCapsules = () => {
   const categories = ['all', 'technical', 'career', 'entrepreneurship', 'life_lessons', 'industry_insights', 'other'];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
 
       <div className="flex flex-1">
@@ -198,7 +198,7 @@ const AdminKnowledgeCapsules = () => {
                   {filteredCapsules.map((capsule) => (
                     <div
                       key={capsule.id}
-                      className="border rounded-lg p-4 hover:bg-gray-50 transition-colors"
+                      className="border rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                       data-testid={`capsule-item-${capsule.id}`}
                     >
                       <div className="flex items-start justify-between">
@@ -324,7 +324,7 @@ const AdminKnowledgeCapsules = () => {
                 </div>
               )}
 
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+              <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <div className="flex items-center gap-6">
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-5 h-5 text-gray-600" />
