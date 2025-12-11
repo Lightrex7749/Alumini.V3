@@ -237,7 +237,7 @@ const CareerPaths = () => {
                       <h3 className="font-semibold mb-3">Success Stories</h3>
                       <div className="space-y-3">
                         {path.success_stories.map((story, idx) => (
-                          <div key={idx} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                          <div key={idx} className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                             <Avatar>
                               <AvatarImage src={`https://i.pravatar.cc/150?img=${idx + 1}`} />
                               <AvatarFallback>{story.alumni_name.substring(0, 2)}</AvatarFallback>

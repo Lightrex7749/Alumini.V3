@@ -265,12 +265,12 @@ const Profile = () => {
 
   if (loading || !profileData) {
     return (
-      <div className="min-h-screen flex flex-col bg-gray-50">
+      <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
         <MainNavbar />
         <div className="flex flex-1">
           <Sidebar />
           <main className="flex-1 flex items-center justify-center">
-            <p className="text-gray-500">Loading profile...</p>
+            <p className="text-gray-500 dark:text-gray-400">Loading profile...</p>
           </main>
         </div>
         <Footer />
@@ -279,7 +279,7 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
 
       <div className="flex flex-1">
@@ -339,7 +339,7 @@ const Profile = () => {
                         </h1>
                       )}
                       {profileData.headline && !isEditing && (
-                        <p className="text-lg text-gray-600">{profileData.headline}</p>
+                        <p className="text-lg text-gray-600 dark:text-gray-400">{profileData.headline}</p>
                       )}
                       <div className="flex items-center gap-4 text-sm text-gray-500">
                         {profileData.current_role && profileData.current_company && !isEditing && (
@@ -390,7 +390,7 @@ const Profile = () => {
                 {/* Profile Completion */}
                 <div className="mt-6">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-700">Profile Completion</span>
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Profile Completion</span>
                     <span className="text-sm font-medium text-blue-600">
                       {profileData.profile_completion_percentage}%
                     </span>
@@ -464,9 +464,9 @@ const Profile = () => {
                     ) : (
                       <div className="space-y-4">
                         {profileData.bio ? (
-                          <p className="text-gray-700 whitespace-pre-wrap">{profileData.bio}</p>
+                          <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap">{profileData.bio}</p>
                         ) : (
-                          <p className="text-gray-400 italic">No bio added yet. Click Edit Profile to add one.</p>
+                          <p className="text-gray-400 dark:text-gray-500 italic">No bio added yet. Click Edit Profile to add one.</p>
                         )}
                       </div>
                     )}
@@ -665,7 +665,7 @@ const Profile = () => {
                             <Building className="w-12 h-12 text-blue-600 bg-blue-50 rounded-lg p-2 flex-shrink-0" />
                             <div className="flex-1">
                               <h3 className="font-semibold text-lg">{profileData.current_role}</h3>
-                              <p className="text-gray-600">{profileData.current_company}</p>
+                              <p className="text-gray-600 dark:text-gray-400">{profileData.current_company}</p>
                               <p className="text-sm text-gray-500 mt-1">Present</p>
                             </div>
                           </div>
@@ -679,15 +679,15 @@ const Profile = () => {
                           <div className="space-y-4">
                             {profileData.experience_timeline.map((exp, index) => (
                               <div key={index} className="flex gap-4 p-4 border rounded-lg">
-                                <Building className="w-12 h-12 text-gray-400 bg-gray-50 rounded-lg p-2 flex-shrink-0" />
+                                <Building className="w-12 h-12 text-gray-400 bg-gray-50 dark:bg-gray-800 rounded-lg p-2 flex-shrink-0" />
                                 <div className="flex-1">
                                   <h3 className="font-semibold text-lg">{exp.role}</h3>
-                                  <p className="text-gray-600">{exp.company}</p>
-                                  <p className="text-sm text-gray-500 mt-1">
+                                  <p className="text-gray-600 dark:text-gray-400">{exp.company}</p>
+                                  <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
                                     {exp.start_date} - {exp.end_date || 'Present'}
                                   </p>
                                   {exp.description && (
-                                    <p className="text-sm text-gray-700 mt-2">{exp.description}</p>
+                                    <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">{exp.description}</p>
                                   )}
                                 </div>
                                 {isEditing && (
@@ -751,12 +751,12 @@ const Profile = () => {
                             <GraduationCap className="w-12 h-12 text-green-600 bg-green-50 rounded-lg p-2 flex-shrink-0" />
                             <div className="flex-1">
                               <h3 className="font-semibold text-lg">{edu.degree} {edu.field && `in ${edu.field}`}</h3>
-                              <p className="text-gray-600">{edu.institution}</p>
-                              <p className="text-sm text-gray-500 mt-1">
+                              <p className="text-gray-600 dark:text-gray-400">{edu.institution}</p>
+                              <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
                                 {edu.start_year} - {edu.end_year}
                               </p>
                               {edu.achievements && (
-                                <p className="text-sm text-gray-700 mt-2">{edu.achievements}</p>
+                                <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">{edu.achievements}</p>
                               )}
                             </div>
                             {isEditing && (
@@ -833,7 +833,7 @@ const Profile = () => {
                           {profileData.achievements.map((achievement, index) => (
                             <li key={index} className="flex items-start gap-2">
                               <Target className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                              <span className="text-gray-700 flex-1">{achievement}</span>
+                              <span className="text-gray-700 dark:text-gray-300 flex-1">{achievement}</span>
                               {isEditing && (
                                 <Button
                                   size="sm"

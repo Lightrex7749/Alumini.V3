@@ -136,7 +136,7 @@ const NotificationPreferences = () => {
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2" data-testid="notification-preferences-title">
             Notification Preferences
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-400">
             Manage how you receive notifications
           </p>
         </div>
@@ -190,7 +190,7 @@ const NotificationPreferences = () => {
                 <div key={category.id}>
                   <div className="space-y-3">
                     <div>
-                      <h4 className="font-medium text-gray-900">{category.label}</h4>
+                      <h4 className="font-medium text-gray-900 dark:text-white">{category.label}</h4>
                       <p className="text-sm text-gray-500">{category.description}</p>
                     </div>
                     <div className="flex items-center gap-6 ml-4">

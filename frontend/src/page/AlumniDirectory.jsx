@@ -210,19 +210,19 @@ const AlumniDirectory = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-gray-100">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-blue-600">{results.totalResults || 0}</div>
-                  <div className="text-sm text-gray-600">Total Alumni</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Total Alumni</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-green-600">
                     {results.data.filter(p => p.willing_to_mentor).length}
                   </div>
-                  <div className="text-sm text-gray-600">Available Mentors</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Available Mentors</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-purple-600">
                     {results.data.filter(p => p.is_verified).length}
                   </div>
-                  <div className="text-sm text-gray-600">Verified Profiles</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Verified Profiles</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-orange-600">
@@ -317,7 +317,7 @@ const AlumniDirectory = () => {
                       <span data-testid="results-count" className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                         Showing <strong className="text-blue-600">{results.data.length}</strong> of{' '}
-                        <strong className="text-gray-900">{results.totalResults}</strong> alumni
+                        <strong className="text-gray-900 dark:text-white">{results.totalResults}</strong> alumni
                       </span>
                     )}
                   </div>

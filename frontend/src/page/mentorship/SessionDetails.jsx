@@ -147,7 +147,7 @@ const SessionDetails = () => {
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2" data-testid="session-title">
                   {session.agenda || 'Mentorship Session'}
                 </h1>
-                <div className="flex items-center gap-4 text-gray-600">
+                <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-5 w-5" />
                     <span>{format(sessionDate, 'EEEE, MMMM d, yyyy')}</span>
@@ -166,8 +166,8 @@ const SessionDetails = () => {
               <div className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg mb-4">
                 <Video className="h-5 w-5 text-blue-600" />
                 <div className="flex-1">
-                  <p className="text-sm font-semibold text-gray-900">Meeting Link</p>
-                  <p className="text-xs text-gray-600 truncate">{session.meeting_link}</p>
+                  <p className="text-sm font-semibold text-gray-900 dark:text-white">Meeting Link</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 truncate">{session.meeting_link}</p>
                 </div>
                 {isUpcoming && (
                   <Button onClick={handleJoinMeeting} data-testid="join-meeting-btn">
@@ -209,7 +209,7 @@ const SessionDetails = () => {
         {/* Participants */}
         <Card className="mb-6">
           <CardContent className="p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Participants</h2>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Participants</h2>
             <div className="space-y-4">
               {/* Mentor */}
               <div className="flex items-center gap-4">
@@ -218,8 +218,8 @@ const SessionDetails = () => {
                   <AvatarFallback>{getInitials(mentor?.profile?.name)}</AvatarFallback>
                 </Avatar>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900">{mentor?.profile?.name}</h3>
-                  <p className="text-sm text-gray-600">{mentor?.profile?.headline}</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">{mentor?.profile?.name}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{mentor?.profile?.headline}</p>
                   <Badge variant="secondary" className="text-xs mt-1">Mentor</Badge>
                 </div>
                 <Button
@@ -240,8 +240,8 @@ const SessionDetails = () => {
                   <AvatarFallback>{getInitials(student?.profile?.name || student?.email)}</AvatarFallback>
                 </Avatar>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900">{student?.profile?.name || student?.email}</h3>
-                  <p className="text-sm text-gray-600">{student?.profile?.headline || 'Student'}</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">{student?.profile?.name || student?.email}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{student?.profile?.headline || 'Student'}</p>
                   <Badge variant="secondary" className="text-xs mt-1">Mentee</Badge>
                 </div>
                 {student?.profile && (
@@ -265,8 +265,8 @@ const SessionDetails = () => {
               <div className="flex items-start gap-3 mb-2">
                 <FileText className="h-5 w-5 text-gray-500 mt-0.5" />
                 <div className="flex-1">
-                  <h2 className="text-xl font-bold text-gray-900 mb-3">Session Notes</h2>
-                  <p className="text-gray-700 whitespace-pre-line">{session.notes}</p>
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Session Notes</h2>
+                  <p className="text-gray-700 dark:text-gray-300 whitespace-pre-line">{session.notes}</p>
                 </div>
               </div>
             </CardContent>
@@ -281,13 +281,13 @@ const SessionDetails = () => {
                 <Star className="h-5 w-5 text-yellow-500 fill-current mt-0.5" />
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-3">
-                    <h2 className="text-xl font-bold text-gray-900">Feedback</h2>
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white">Feedback</h2>
                     <div className="flex items-center gap-1">
-                      <span className="text-2xl font-bold text-gray-900">{session.rating}</span>
+                      <span className="text-2xl font-bold text-gray-900 dark:text-white">{session.rating}</span>
                       <span className="text-gray-500">/5</span>
                     </div>
                   </div>
-                  <p className="text-gray-700 whitespace-pre-line">{session.feedback}</p>
+                  <p className="text-gray-700 dark:text-gray-300 whitespace-pre-line">{session.feedback}</p>
                   <p className="text-xs text-gray-500 mt-3">
                     Submitted by {isStudent ? 'you' : student?.profile?.name || 'mentee'}
                   </p>

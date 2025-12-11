@@ -53,7 +53,7 @@ const EventAttendees = () => {
       'recruiter': 'bg-purple-100 text-purple-700',
       'admin': 'bg-red-100 text-red-700'
     };
-    return colors[role] || 'bg-gray-100 text-gray-700';
+    return colors[role] || 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300';
   };
 
   if (loading) {
@@ -90,7 +90,7 @@ const EventAttendees = () => {
           <h1 className="text-3xl font-bold mb-2">
             {event?.title || 'Event'} - Attendees
           </h1>
-          <div className="flex items-center gap-2 text-gray-600">
+          <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
             <Users className="h-5 w-5" />
             <span>{attendees.length} attendees registered</span>
           </div>

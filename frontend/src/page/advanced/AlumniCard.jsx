@@ -232,7 +232,7 @@ const AlumniCard = () => {
 
                       {/* QR Code */}
                       <div className="flex-shrink-0">
-                        <div className="w-28 h-28 bg-white rounded-lg p-2 flex items-center justify-center">
+                        <div className="w-28 h-28 bg-white dark:bg-gray-800 rounded-lg p-2 flex items-center justify-center">
                           <QrCode className="h-full w-full text-gray-800" />
                         </div>
                         <p className="text-xs text-blue-200 text-center mt-2">Scan to verify</p>
@@ -255,7 +255,7 @@ const AlumniCard = () => {
                     </CardHeader>
                     <CardContent>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                           <span className="text-sm font-medium text-gray-700">Validation Status:</span>
                           <Badge className={
                             cardData.ai_validation_status === 'verified' 
@@ -266,12 +266,12 @@ const AlumniCard = () => {
                           </Badge>
                         </div>
                         
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                           <span className="text-sm font-medium text-gray-700">AI Confidence:</span>
                           {getConfidenceBadge(cardData.ai_confidence_score)}
                         </div>
                         
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                           <span className="text-sm font-medium text-gray-700">Duplicate Check:</span>
                           <Badge className={
                             cardData.duplicate_check_passed 
@@ -282,7 +282,7 @@ const AlumniCard = () => {
                           </Badge>
                         </div>
                         
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                           <span className="text-sm font-medium text-gray-700">Signature Verified:</span>
                           <Badge className={
                             cardData.signature_verified 
@@ -293,7 +293,7 @@ const AlumniCard = () => {
                           </Badge>
                         </div>
                         
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                           <span className="text-sm font-medium text-gray-700">Total Verifications:</span>
                           <Badge variant="outline" className="flex items-center gap-1">
                             <TrendingUp className="h-3 w-3" />
@@ -301,7 +301,7 @@ const AlumniCard = () => {
                           </Badge>
                         </div>
                         
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                           <span className="text-sm font-medium text-gray-700">Last Verified:</span>
                           <Badge variant="outline" className="flex items-center gap-1">
                             <Clock className="h-3 w-3" />
@@ -389,7 +389,7 @@ const AlumniCard = () => {
                               <p className="text-sm">This is a valid alumni card</p>
                             </div>
                           </div>
-                          <div className="bg-white p-4 rounded-lg space-y-2">
+                          <div className="bg-white dark:bg-gray-800 p-4 rounded-lg space-y-2">
                             <p><span className="font-semibold">Name:</span> {verificationResult.profile?.name}</p>
                             <p><span className="font-semibold">Card Number:</span> {verificationResult.card?.card_number}</p>
                             <p><span className="font-semibold">Batch Year:</span> {verificationResult.profile?.batch_year}</p>
@@ -408,13 +408,13 @@ const AlumniCard = () => {
 
                       {/* AI Validation Checks */}
                       {verificationResult.aiValidation && (
-                        <div className="bg-white p-4 rounded-lg">
+                        <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">
                           <h4 className="font-semibold mb-3 flex items-center gap-2">
                             <Shield className="h-5 w-5 text-purple-600" />
                             AI Validation Checks
                           </h4>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div className="flex items-center justify-between p-2 bg-gray-50 rounded">
+                            <div className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-700 rounded">
                               <span className="text-sm text-gray-700">Duplicate Check:</span>
                               <Badge className={
                                 verificationResult.aiValidation.duplicate_check === 'passed' 
@@ -425,7 +425,7 @@ const AlumniCard = () => {
                               </Badge>
                             </div>
                             
-                            <div className="flex items-center justify-between p-2 bg-gray-50 rounded">
+                            <div className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-700 rounded">
                               <span className="text-sm text-gray-700">Signature:</span>
                               <Badge className={
                                 verificationResult.aiValidation.signature_check === 'valid' 
@@ -436,7 +436,7 @@ const AlumniCard = () => {
                               </Badge>
                             </div>
                             
-                            <div className="flex items-center justify-between p-2 bg-gray-50 rounded">
+                            <div className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-700 rounded">
                               <span className="text-sm text-gray-700">Expiry Status:</span>
                               <Badge className={
                                 verificationResult.aiValidation.expiry_check === 'active' 
@@ -447,7 +447,7 @@ const AlumniCard = () => {
                               </Badge>
                             </div>
                             
-                            <div className="flex items-center justify-between p-2 bg-gray-50 rounded">
+                            <div className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-700 rounded">
                               <span className="text-sm text-gray-700">AI Confidence:</span>
                               {getConfidenceBadge(verificationResult.aiValidation.confidence_score)}
                             </div>
@@ -519,3 +519,6 @@ const AlumniCard = () => {
 };
 
 export default AlumniCard;
+
+
+

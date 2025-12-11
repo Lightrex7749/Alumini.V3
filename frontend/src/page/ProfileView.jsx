@@ -46,12 +46,12 @@ const ProfileView = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col bg-gray-50">
+      <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
         <MainNavbar />
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Loading profile...</p>
+            <p className="mt-4 text-gray-600 dark:text-gray-400">Loading profile...</p>
           </div>
         </div>
       </div>
@@ -60,12 +60,12 @@ const ProfileView = () => {
 
   if (!profile) {
     return (
-      <div className="min-h-screen flex flex-col bg-gray-50">
+      <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
         <MainNavbar />
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Profile Not Found</h2>
-            <p className="text-gray-600 mb-6">The profile you're looking for doesn't exist.</p>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Profile Not Found</h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">The profile you're looking for doesn't exist.</p>
             <Button onClick={() => navigate('/directory')}>Back to Directory</Button>
           </div>
         </div>
@@ -76,7 +76,7 @@ const ProfileView = () => {
   const socialLinks = profile.social_links || {};
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
 
       <main className="flex-1 py-8">
@@ -106,7 +106,7 @@ const ProfileView = () => {
                     </AvatarFallback>
                   </Avatar>
                   {profile.is_verified && (
-                    <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-1 shadow-md">
+                    <div className="absolute -bottom-2 -right-2 bg-white dark:bg-gray-800 rounded-full p-1 shadow-md">
                       <CheckCircle2 className="h-8 w-8 text-blue-600" />
                     </div>
                   )}
@@ -116,10 +116,10 @@ const ProfileView = () => {
                 <div className="flex-1 space-y-4">
                   <div>
                     <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{profile.name}</h1>
-                    <p className="text-xl text-gray-600 mt-2">{profile.headline}</p>
+                    <p className="text-xl text-gray-600 dark:text-gray-400 mt-2">{profile.headline}</p>
                   </div>
 
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                  <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
                     {profile.current_company && (
                       <div className="flex items-center gap-2">
                         <Briefcase className="h-5 w-5" />
@@ -172,7 +172,7 @@ const ProfileView = () => {
                 <Card>
                   <CardContent className="p-6">
                     <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">About</h2>
-                    <p className="text-gray-600 leading-relaxed">{profile.bio}</p>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{profile.bio}</p>
                   </CardContent>
                 </Card>
               )}
@@ -190,7 +190,7 @@ const ProfileView = () => {
                           </div>
                           <div className="flex-1">
                             <h3 className="font-semibold text-lg text-gray-900 dark:text-white">{exp.role}</h3>
-                            <p className="text-gray-600">{exp.company}</p>
+                            <p className="text-gray-600 dark:text-gray-400">{exp.company}</p>
                             <p className="text-sm text-gray-500 mt-1">
                               {new Date(exp.start_date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
                               {' - '}
@@ -200,7 +200,7 @@ const ProfileView = () => {
                               }
                             </p>
                             {exp.description && (
-                              <p className="text-gray-600 mt-3 leading-relaxed">{exp.description}</p>
+                              <p className="text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">{exp.description}</p>
                             )}
                           </div>
                         </div>
@@ -221,12 +221,12 @@ const ProfileView = () => {
                           <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
                             {edu.degree} in {edu.field}
                           </h3>
-                          <p className="text-gray-600">{edu.institution}</p>
-                          <p className="text-sm text-gray-500 mt-1">
+                          <p className="text-gray-600 dark:text-gray-400">{edu.institution}</p>
+                          <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
                             {edu.start_year} - {edu.end_year}
                           </p>
                           {edu.achievements && (
-                            <p className="text-gray-600 mt-2">{edu.achievements}</p>
+                            <p className="text-gray-600 dark:text-gray-400 mt-2">{edu.achievements}</p>
                           )}
                         </div>
                       ))}
@@ -312,7 +312,7 @@ const ProfileView = () => {
                     <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Achievements</h2>
                     <ul className="space-y-2">
                       {profile.achievements.map((achievement, idx) => (
-                        <li key={idx} className="text-sm text-gray-600 flex items-start gap-2">
+                        <li key={idx} className="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
                           <span className="text-blue-600 mt-1">•</span>
                           <span>{achievement}</span>
                         </li>

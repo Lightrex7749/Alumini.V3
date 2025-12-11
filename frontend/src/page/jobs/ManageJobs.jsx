@@ -64,7 +64,7 @@ const ManageJobs = () => {
   });
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
       
       <div className="flex flex-1">
@@ -76,7 +76,7 @@ const ManageJobs = () => {
             <div className="flex items-center justify-between">
               <div>
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Manage Jobs</h1>
-                <p className="text-gray-600 mt-1">View and manage all your job postings</p>
+                <p className="text-gray-600 dark:text-gray-400 mt-1">View and manage all your job postings</p>
               </div>
               <Button asChild data-testid="post-new-job-btn">
                 <Link to="/jobs/post">
@@ -136,7 +136,7 @@ const ManageJobs = () => {
             {loading ? (
               <div className="text-center py-12">
                 <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                <p className="mt-2 text-gray-600">Loading jobs...</p>
+                <p className="mt-2 text-gray-600 dark:text-gray-400">Loading jobs...</p>
               </div>
             ) : filteredJobs.length === 0 ? (
               <Card>
@@ -198,7 +198,7 @@ const ManageJobs = () => {
                         </div>
 
                         {/* Description Preview */}
-                        <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
                           {job.description}
                         </p>
 

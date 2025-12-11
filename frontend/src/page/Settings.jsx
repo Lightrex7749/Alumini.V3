@@ -130,7 +130,7 @@ const Settings = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
 
       <div className="flex flex-1">
@@ -344,7 +344,7 @@ const Settings = () => {
                     </div>
                     
                     <div className="border-t pt-4 space-y-4">
-                      <h3 className="font-semibold text-sm text-gray-700">Notification Types</h3>
+                      <h3 className="font-semibold text-sm text-gray-700 dark:text-gray-300">Notification Types</h3>
                       
                       {/* notification_types JSON field */}
                       <div className="flex items-center justify-between">

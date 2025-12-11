@@ -91,7 +91,7 @@ const Forum = () => {
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-3xl font-bold mb-2">Community Forum</h1>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 Share knowledge, ask questions, and connect with the community
               </p>
             </div>
@@ -122,7 +122,7 @@ const Forum = () => {
           <div className="mb-6">
             <div className="flex items-center gap-2 mb-2">
               <Filter className="h-4 w-4 text-gray-500" />
-              <span className="text-sm font-semibold text-gray-700">Filter by tag:</span>
+              <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Filter by tag:</span>
             </div>
             <div className="flex flex-wrap gap-2">
               {allTags.slice(0, 15).map((tag) => (
@@ -178,7 +178,7 @@ const Forum = () => {
             ) : (
               <div className="text-center py-12 bg-gray-50 dark:bg-gray-800 rounded-lg">
                 <h3 className="text-lg font-semibold mb-2 dark:text-white">No posts found</h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
                   {searchTerm || selectedTag
                     ? 'Try adjusting your filters'
                     : 'Be the first to start a discussion!'}
@@ -206,7 +206,7 @@ const Forum = () => {
             ) : (
               <div className="text-center py-12 bg-gray-50 dark:bg-gray-800 rounded-lg">
                 <h3 className="text-lg font-semibold mb-2 dark:text-white">No popular posts yet</h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Start engaging with posts to see popular content here
                 </p>
               </div>

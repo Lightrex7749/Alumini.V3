@@ -144,14 +144,14 @@ const EditJob = () => {
 
   if (loadingJob) {
     return (
-      <div className="min-h-screen flex flex-col bg-gray-50">
+      <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
         <MainNavbar />
         <div className="flex flex-1">
           <Sidebar />
           <main className="flex-1 flex items-center justify-center">
             <div className="text-center">
               <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-              <p className="mt-2 text-gray-600">Loading job details...</p>
+              <p className="mt-2 text-gray-600 dark:text-gray-400">Loading job details...</p>
             </div>
           </main>
         </div>
@@ -161,7 +161,7 @@ const EditJob = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50" data-testid="edit-job-page">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900" data-testid="edit-job-page">
       <MainNavbar />
       
       <div className="flex flex-1">
@@ -185,7 +185,7 @@ const EditJob = () => {
                   <Briefcase className="w-8 h-8 text-blue-600" />
                   <div>
                     <CardTitle className="text-2xl">Edit Job Posting</CardTitle>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                       Update your job posting details
                     </p>
                   </div>

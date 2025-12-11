@@ -117,7 +117,7 @@ const DatasetReport = () => {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-gray-500">Processing Time</p>
-                  <p className="text-2xl font-bold text-gray-900 mt-2">
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white mt-2">
                     {formatTime(reportData?.processingTime || 0)}
                   </p>
                 </div>
@@ -156,32 +156,32 @@ const DatasetReport = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <p className="text-sm text-gray-500">Dataset Type</p>
-                <p className="font-medium text-gray-900 mt-1 capitalize">
+                <p className="font-medium text-gray-900 dark:text-white mt-1 capitalize">
                   {reportData?.datasetType?.replace('_', ' ')}
                 </p>
               </div>
               <div>
                 <p className="text-sm text-gray-500">Upload Date</p>
-                <p className="font-medium text-gray-900 mt-1">
+                <p className="font-medium text-gray-900 dark:text-white mt-1">
                   {formatDate(reportData?.uploadDate)}
                 </p>
               </div>
               <div>
                 <p className="text-sm text-gray-500">Uploaded By</p>
-                <p className="font-medium text-gray-900 mt-1">
+                <p className="font-medium text-gray-900 dark:text-white mt-1">
                   {reportData?.uploadedByName}
                 </p>
               </div>
               <div>
                 <p className="text-sm text-gray-500">File Size</p>
-                <p className="font-medium text-gray-900 mt-1">
+                <p className="font-medium text-gray-900 dark:text-white mt-1">
                   {(reportData?.fileSize / (1024 * 1024)).toFixed(2)} MB
                 </p>
               </div>
               {reportData?.description && (
                 <div className="md:col-span-2">
                   <p className="text-sm text-gray-500">Description</p>
-                  <p className="font-medium text-gray-900 mt-1">
+                  <p className="font-medium text-gray-900 dark:text-white mt-1">
                     {reportData?.description}
                   </p>
                 </div>

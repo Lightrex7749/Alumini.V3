@@ -84,7 +84,7 @@ const PostJob = () => {
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-2">Access Denied</h2>
-            <p className="text-gray-600 mb-4">Only alumni and recruiters can post jobs</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">Only alumni and recruiters can post jobs</p>
             <Button onClick={() => navigate('/jobs')}>Browse Jobs</Button>
           </div>
         </main>

@@ -159,7 +159,7 @@ const MentorshipDashboard = () => {
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white" data-testid="page-title">
             My Mentorship
           </h1>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 dark:text-gray-400 mt-2">
             Manage your mentorship relationships and sessions
           </p>
         </div>
@@ -187,7 +187,7 @@ const MentorshipDashboard = () => {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-600">Active Mentors</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Active Mentors</p>
                       <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">{activeMentorships.length}</p>
                     </div>
                     <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center">
@@ -201,8 +201,8 @@ const MentorshipDashboard = () => {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-600">Pending Requests</p>
-                      <p className="text-3xl font-bold text-gray-900 mt-1">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Pending Requests</p>
+                      <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">
                         {studentRequests.filter(r => r.status === 'pending').length}
                       </p>
                     </div>
@@ -217,8 +217,8 @@ const MentorshipDashboard = () => {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-600">Total Sessions</p>
-                      <p className="text-3xl font-bold text-gray-900 mt-1">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Total Sessions</p>
+                      <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">
                         {upcomingSessions.length + pastSessions.length}
                       </p>
                     </div>
@@ -233,7 +233,7 @@ const MentorshipDashboard = () => {
             {/* Upcoming Sessions */}
             {upcomingSessions.length > 0 && (
               <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-4">Upcoming Sessions</h2>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Upcoming Sessions</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {upcomingSessions.map((session) => (
                     <SessionCard
@@ -249,7 +249,7 @@ const MentorshipDashboard = () => {
 
             {/* Active Mentorships */}
             <div>
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Active Mentorships</h2>
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Active Mentorships</h2>
               {activeMentorships.length > 0 ? (
                 <div className="grid grid-cols-1 gap-6">
                   {activeMentorships.map((mentorship) => (
@@ -263,10 +263,10 @@ const MentorshipDashboard = () => {
                           <div className="flex-1">
                             <div className="flex items-start justify-between mb-2">
                               <div>
-                                <h3 className="font-semibold text-lg text-gray-900">
+                                <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
                                   {mentorship.mentor?.profile?.name}
                                 </h3>
-                                <p className="text-sm text-gray-600">
+                                <p className="text-sm text-gray-600 dark:text-gray-400">
                                   {mentorship.mentor?.profile?.headline}
                                 </p>
                               </div>
@@ -321,7 +321,7 @@ const MentorshipDashboard = () => {
             {/* Pending Requests */}
             {studentRequests.filter(r => r.status === 'pending').length > 0 && (
               <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-4">Pending Requests</h2>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Pending Requests</h2>
                 <div className="grid grid-cols-1 gap-4">
                   {studentRequests
                     .filter(r => r.status === 'pending')
@@ -345,7 +345,7 @@ const MentorshipDashboard = () => {
             {/* Past Sessions */}
             {pastSessions.length > 0 && (
               <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-4">Past Sessions</h2>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Past Sessions</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {pastSessions.slice(0, 4).map((session) => (
                     <SessionCard
@@ -368,8 +368,8 @@ const MentorshipDashboard = () => {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900">Mentor Profile Settings</h3>
-                      <p className="text-sm text-gray-600 mt-1">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Mentor Profile Settings</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                         Update your expertise, availability, and mentorship approach
                       </p>
                     </div>
@@ -387,8 +387,8 @@ const MentorshipDashboard = () => {
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm text-gray-600">Active Mentees</p>
-                        <p className="text-3xl font-bold text-gray-900 mt-1">{activeMentees.length}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">Active Mentees</p>
+                        <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">{activeMentees.length}</p>
                       </div>
                       <div className="h-12 w-12 bg-purple-100 rounded-full flex items-center justify-center">
                         <Users className="h-6 w-6 text-purple-600" />
@@ -401,8 +401,8 @@ const MentorshipDashboard = () => {
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm text-gray-600">Pending Requests</p>
-                        <p className="text-3xl font-bold text-gray-900 mt-1">
+                        <p className="text-sm text-gray-600 dark:text-gray-400">Pending Requests</p>
+                        <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">
                           {mentorRequests.filter(r => r.status === 'pending').length}
                         </p>
                       </div>
@@ -417,8 +417,8 @@ const MentorshipDashboard = () => {
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm text-gray-600">Upcoming Sessions</p>
-                        <p className="text-3xl font-bold text-gray-900 mt-1">{upcomingSessions.length}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">Upcoming Sessions</p>
+                        <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">{upcomingSessions.length}</p>
                       </div>
                       <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center">
                         <Calendar className="h-6 w-6 text-blue-600" />
@@ -431,7 +431,7 @@ const MentorshipDashboard = () => {
               {/* Pending Mentorship Requests */}
               {mentorRequests.filter(r => r.status === 'pending').length > 0 && (
                 <div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-4">Mentorship Requests</h2>
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Mentorship Requests</h2>
                   <div className="grid grid-cols-1 gap-4">
                     {mentorRequests
                       .filter(r => r.status === 'pending')
@@ -455,7 +455,7 @@ const MentorshipDashboard = () => {
 
               {/* Active Mentees */}
               <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-4">Active Mentees</h2>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Active Mentees</h2>
                 {activeMentees.length > 0 ? (
                   <div className="grid grid-cols-1 gap-6">
                     {activeMentees.map((mentee) => (
@@ -469,15 +469,15 @@ const MentorshipDashboard = () => {
                             <div className="flex-1">
                               <div className="flex items-start justify-between mb-2">
                                 <div>
-                                  <h3 className="font-semibold text-lg text-gray-900">
+                                  <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
                                     {mentee.student?.profile?.name || mentee.student?.email}
                                   </h3>
-                                  <p className="text-sm text-gray-600">
+                                  <p className="text-sm text-gray-600 dark:text-gray-400">
                                     {mentee.student?.profile?.headline || 'Student'}
                                   </p>
                                 </div>
                               </div>
-                              <p className="text-sm text-gray-700 mb-3">
+                              <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
                                 <strong>Goals:</strong> {mentee.goals}
                               </p>
                               <div className="flex gap-2">
@@ -516,7 +516,7 @@ const MentorshipDashboard = () => {
               {/* Upcoming Sessions */}
               {upcomingSessions.length > 0 && (
                 <div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-4">Upcoming Sessions</h2>
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Upcoming Sessions</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {upcomingSessions.map((session) => (
                       <SessionCard

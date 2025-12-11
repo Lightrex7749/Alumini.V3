@@ -163,8 +163,8 @@ const DatasetUpload = () => {
               </h3>
               <div className="space-y-3">
                 {datasetTypes.map((type) => (
-                  <div key={type.value} className="bg-white p-3 rounded-md border border-blue-100">
-                    <h4 className="font-medium text-gray-900">{type.label}</h4>
+                  <div key={type.value} className="bg-white dark:bg-gray-800 p-3 rounded-md border border-blue-100 dark:border-gray-700">
+                    <h4 className="font-medium text-gray-900 dark:text-white">{type.label}</h4>
                     <p className="text-sm text-gray-600 mt-1">{type.description}</p>
                   </div>
                 ))}

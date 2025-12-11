@@ -198,7 +198,7 @@ const CareerInsights = () => {
                 </h3>
                 <div className="space-y-2">
                   {topPredictions[0]?.skills_gap.slice(0, 3).map((skill, idx) => (
-                    <div key={idx} className="flex items-center justify-between p-2 bg-white rounded">
+                    <div key={idx} className="flex items-center justify-between p-2 bg-white dark:bg-gray-800 rounded">
                       <span className="font-medium text-sm">{skill}</span>
                       <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
                         {topPredictions[0].skill_importance[skill] || 'high'}

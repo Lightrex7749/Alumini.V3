@@ -130,21 +130,21 @@ const Dashboard = () => {
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-900">Profile updated</p>
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">Profile updated</p>
                       <p className="text-xs text-gray-500">2 hours ago</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-900">Applied to Frontend Developer position</p>
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">Applied to Frontend Developer position</p>
                       <p className="text-xs text-gray-500">1 day ago</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-purple-600 rounded-full mt-2"></div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-900">RSVP'd to Machine Learning Workshop</p>
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">RSVP'd to Machine Learning Workshop</p>
                       <p className="text-xs text-gray-500">3 days ago</p>
                     </div>
                   </div>

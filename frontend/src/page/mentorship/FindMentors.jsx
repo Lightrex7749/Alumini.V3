@@ -76,7 +76,7 @@ const FindMentors = () => {
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white" data-testid="page-title">
             Find Mentors
           </h1>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 dark:text-gray-400 mt-2">
             Connect with experienced alumni who can guide your career journey
           </p>
         </div>
@@ -104,7 +104,7 @@ const FindMentors = () => {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 dark:text-white"
               data-testid="sort-select"
             >
               <option value="rating">Highest Rated</option>
@@ -211,7 +211,7 @@ const FindMentors = () => {
         {/* Active Filters Display */}
         {hasActiveFilters && (
           <div className="mb-6 flex flex-wrap gap-2 items-center">
-            <span className="text-sm text-gray-600">Active filters:</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400">Active filters:</span>
             {filters.expertise.map((exp) => (
               <Badge key={exp} variant="secondary" className="gap-1">
                 {exp}
@@ -250,7 +250,7 @@ const FindMentors = () => {
 
         {/* Results Count */}
         <div className="mb-4">
-          <p className="text-sm text-gray-600" data-testid="results-count">
+          <p className="text-sm text-gray-600 dark:text-gray-400" data-testid="results-count">
             Showing {paginatedResults.data.length} of {filteredMentors.length} mentor{filteredMentors.length !== 1 ? 's' : ''}
           </p>
         </div>

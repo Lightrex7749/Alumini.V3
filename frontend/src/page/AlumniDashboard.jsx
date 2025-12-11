@@ -149,7 +149,7 @@ const AlumniDashboard = () => {
                       <CardTitle className="text-sm font-medium">
                         {stat.title}
                       </CardTitle>
-                      <Icon className="h-4 w-4 text-gray-600" />
+                      <Icon className="h-4 w-4 text-gray-600 dark:text-gray-400" />
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl font-bold">{stat.value}</div>
@@ -313,7 +313,7 @@ const AlumniDashboard = () => {
                           <div className="flex-1">
                             <p className="font-medium text-sm">{job.title}</p>
                             <p className="text-xs text-gray-500">{job.company}</p>
-                            <div className="flex gap-4 mt-2 text-xs text-gray-600">
+                            <div className="flex gap-4 mt-2 text-xs text-gray-600 dark:text-gray-400">
                               <span>👁️ {job.views_count} views</span>
                               <span>📄 {job.applications_count} applications</span>
                             </div>

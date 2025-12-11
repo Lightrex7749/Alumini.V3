@@ -96,7 +96,7 @@ const ManagePosts = () => {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold mb-2">Manage My Posts</h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               View and manage your forum posts
             </p>
           </div>
@@ -122,7 +122,7 @@ const ManagePosts = () => {
                           {post.title && (
                             <h3 className="font-semibold text-lg mb-1">{post.title}</h3>
                           )}
-                          <p className="text-sm text-gray-700 line-clamp-3 mb-2">
+                          <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-3 mb-2">
                             {post.content}
                           </p>
                           <p className="text-xs text-gray-500 mb-2">
@@ -143,7 +143,7 @@ const ManagePosts = () => {
                       </div>
 
                       {/* Stats */}
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                      <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
                         <div className="flex items-center gap-1">
                           <Eye className="h-4 w-4" />
                           <span>{post.views_count || 0} views</span>
@@ -189,7 +189,7 @@ const ManagePosts = () => {
             <CardContent className="p-12 text-center">
               <MessageSquare className="h-16 w-16 mx-auto text-gray-300 mb-4" />
               <h3 className="text-lg font-semibold mb-2">No posts yet</h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
                 You haven't created any forum posts. Start by creating your first post!
               </p>
               <Button onClick={() => navigate('/forum')}>

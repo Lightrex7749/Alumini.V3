@@ -91,7 +91,7 @@ const EventDetails = () => {
       'networking': 'bg-green-100 text-green-700',
       'meetup': 'bg-yellow-100 text-yellow-700'
     };
-    return colors[type] || 'bg-gray-100 text-gray-700';
+    return colors[type] || 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300';
   };
 
   const getInitials = (name) => {
@@ -192,7 +192,7 @@ const EventDetails = () => {
                   <Calendar className="h-5 w-5 text-gray-500 mt-0.5" />
                   <div>
                     <p className="font-semibold text-sm">Date & Time</p>
-                    <p className="text-sm text-gray-600">{formatDate(event.start_date)}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{formatDate(event.start_date)}</p>
                   </div>
                 </div>
 
@@ -204,7 +204,7 @@ const EventDetails = () => {
                   )}
                   <div>
                     <p className="font-semibold text-sm">Location</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
                       {event.is_virtual ? 'Virtual Event' : event.location}
                     </p>
                   </div>
@@ -214,7 +214,7 @@ const EventDetails = () => {
                   <Users className="h-5 w-5 text-gray-500 mt-0.5" />
                   <div>
                     <p className="font-semibold text-sm">Attendees</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
                       {event.current_attendees_count} / {event.max_attendees} registered
                     </p>
                   </div>
@@ -262,7 +262,7 @@ const EventDetails = () => {
         <Card className="mb-6">
           <CardContent className="p-6">
             <h2 className="text-xl font-semibold mb-3">About This Event</h2>
-            <div className="text-gray-700 whitespace-pre-wrap">
+            <div className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
               {event.description}
             </div>
           </CardContent>

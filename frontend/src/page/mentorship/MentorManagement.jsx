@@ -296,7 +296,7 @@ const MentorManagement = () => {
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white" data-testid="page-title">
             Mentor Management
           </h1>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 dark:text-gray-400 mt-2">
             Manage your mentorship profile and mentees
           </p>
         </div>
@@ -336,8 +336,8 @@ const MentorManagement = () => {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-600">Active Mentees</p>
-                      <p className="text-3xl font-bold text-gray-900 mt-1">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Active Mentees</p>
+                      <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">
                         {mentorProfile.current_mentees_count}
                       </p>
                       <p className="text-xs text-gray-500 mt-1">of {mentorProfile.max_mentees}</p>
@@ -353,8 +353,8 @@ const MentorManagement = () => {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-600">Pending Requests</p>
-                      <p className="text-3xl font-bold text-gray-900 mt-1">{pendingRequests.length}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Pending Requests</p>
+                      <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">{pendingRequests.length}</p>
                     </div>
                     <div className="h-12 w-12 bg-yellow-100 rounded-full flex items-center justify-center">
                       <MessageSquare className="h-6 w-6 text-yellow-600" />
@@ -367,8 +367,8 @@ const MentorManagement = () => {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-600">Total Sessions</p>
-                      <p className="text-3xl font-bold text-gray-900 mt-1">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Total Sessions</p>
+                      <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">
                         {mentorProfile.total_sessions}
                       </p>
                     </div>
@@ -383,8 +383,8 @@ const MentorManagement = () => {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-600">Rating</p>
-                      <p className="text-3xl font-bold text-gray-900 mt-1">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Rating</p>
+                      <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">
                         {mentorProfile.rating.toFixed(1)}
                       </p>
                       <p className="text-xs text-gray-500 mt-1">
@@ -492,13 +492,13 @@ const MentorManagement = () => {
                         <CardContent className="p-6">
                           <div className="flex items-start justify-between">
                             <div>
-                              <h3 className="font-semibold text-lg text-gray-900">
+                              <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
                                 {mentee.student?.profile?.name || mentee.student?.email}
                               </h3>
-                              <p className="text-sm text-gray-600 mt-1">
+                              <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                                 {mentee.student?.profile?.headline || 'Student'}
                               </p>
-                              <p className="text-sm text-gray-700 mt-2">
+                              <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">
                                 <strong>Goals:</strong> {mentee.goals}
                               </p>
                             </div>

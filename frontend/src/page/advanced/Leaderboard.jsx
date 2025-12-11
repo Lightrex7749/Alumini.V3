@@ -78,7 +78,7 @@ const Leaderboard = () => {
       case 1: return <Crown className="h-8 w-8 text-yellow-500" />;
       case 2: return <Medal className="h-8 w-8 text-gray-400" />;
       case 3: return <Medal className="h-8 w-8 text-orange-600" />;
-      default: return <span className="text-2xl font-bold text-gray-600">#{rank}</span>;
+      default: return <span className="text-2xl font-bold text-gray-600 dark:text-gray-400">#{rank}</span>;
     }
   };
 
@@ -100,7 +100,7 @@ const Leaderboard = () => {
             <Trophy className="h-10 w-10 text-yellow-500" />
             Engagement Leaderboard
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 dark:text-gray-400 text-lg">
             See where you stand and celebrate top contributors in our community.
           </p>
         </div>
@@ -121,7 +121,7 @@ const Leaderboard = () => {
                 <div>
                   <div className="text-center mb-6">
                     <p className="text-5xl font-bold text-blue-600">{myScore.total_score}</p>
-                    <p className="text-gray-600 mt-1">Total Points</p>
+                    <p className="text-gray-600 dark:text-gray-400 mt-1">Total Points</p>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
@@ -220,7 +220,7 @@ const Leaderboard = () => {
               <Card>
                 <CardContent className="py-20 text-center">
                   <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto" />
-                  <p className="mt-4 text-gray-600">Loading leaderboard...</p>
+                  <p className="mt-4 text-gray-600 dark:text-gray-400">Loading leaderboard...</p>
                 </CardContent>
               </Card>
             ) : (
@@ -266,7 +266,7 @@ const Leaderboard = () => {
                         {/* Score */}
                         <div className="text-right">
                           <p className="text-3xl font-bold text-blue-600">{entry.total_score}</p>
-                          <p className="text-xs text-gray-600">points</p>
+                          <p className="text-xs text-gray-600 dark:text-gray-400">points</p>
                         </div>
                       </div>
                     </CardContent>

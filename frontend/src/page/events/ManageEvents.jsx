@@ -88,7 +88,7 @@ const ManageEvents = () => {
       'networking': 'bg-green-100 text-green-700',
       'meetup': 'bg-yellow-100 text-yellow-700'
     };
-    return colors[type] || 'bg-gray-100 text-gray-700';
+    return colors[type] || 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300';
   };
 
   return (
@@ -107,7 +107,7 @@ const ManageEvents = () => {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold mb-2">Manage My Events</h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               View and manage events you've created
             </p>
           </div>
@@ -159,17 +159,17 @@ const ManageEvents = () => {
                             )}
                           </div>
                           <h3 className="font-semibold text-lg mb-1">{event.title}</h3>
-                          <p className="text-sm text-gray-600 mb-2">
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                             {formatDate(event.start_date)}
                           </p>
-                          <p className="text-sm text-gray-600 line-clamp-2">
+                          <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
                             {event.description}
                           </p>
                         </div>
                       </div>
 
                       {/* Stats */}
-                      <div className="flex items-center gap-4 mt-3 text-sm text-gray-600">
+                      <div className="flex items-center gap-4 mt-3 text-sm text-gray-600 dark:text-gray-400">
                         <div className="flex items-center gap-1">
                           <Users className="h-4 w-4" />
                           <span>{event.current_attendees_count} / {event.max_attendees}</span>
@@ -225,7 +225,7 @@ const ManageEvents = () => {
           <Card>
             <CardContent className="p-12 text-center">
               <h3 className="text-lg font-semibold mb-2">No events yet</h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
                 You haven't created any events. Start by creating your first event!
               </p>
               <Button onClick={() => navigate('/events/create')}>

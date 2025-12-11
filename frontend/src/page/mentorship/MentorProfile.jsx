@@ -103,20 +103,20 @@ const MentorProfile = () => {
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2" data-testid="mentor-name">
                   {mentor.profile?.name}
                 </h1>
-                <p className="text-lg text-gray-600 mb-4">{mentor.profile?.headline}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">{mentor.profile?.headline}</p>
 
                 {/* Stats */}
                 <div className="flex flex-wrap gap-4 mb-4">
                   <div className="flex items-center gap-2">
                     <Star className="h-5 w-5 text-yellow-500 fill-current" />
                     <span className="font-semibold text-lg">{mentor.rating.toFixed(2)}</span>
-                    <span className="text-gray-600">({mentor.total_reviews} reviews)</span>
+                    <span className="text-gray-600 dark:text-gray-400">({mentor.total_reviews} reviews)</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                     <BookOpen className="h-5 w-5" />
                     <span>{mentor.total_sessions} sessions completed</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                     <Users className="h-5 w-5" />
                     <span>{mentor.current_mentees_count} / {mentor.max_mentees} mentees</span>
                   </div>
@@ -130,7 +130,7 @@ const MentorProfile = () => {
                       {availableSlots} slot{availableSlots !== 1 ? 's' : ''} available
                     </Badge>
                   ) : (
-                    <Badge variant="secondary" className="bg-gray-100 text-gray-600">
+                    <Badge variant="secondary" className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">
                       Currently unavailable
                     </Badge>
                   )}
@@ -160,7 +160,7 @@ const MentorProfile = () => {
               <Card>
                 <CardContent className="p-6">
                   <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">About</h2>
-                  <p className="text-gray-700 whitespace-pre-line">{mentor.profile.bio}</p>
+                  <p className="text-gray-700 dark:text-gray-300 whitespace-pre-line">{mentor.profile.bio}</p>
                 </CardContent>
               </Card>
             )}
@@ -170,7 +170,7 @@ const MentorProfile = () => {
               <Card>
                 <CardContent className="p-6">
                   <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Mentorship Approach</h2>
-                  <p className="text-gray-700 whitespace-pre-line">{mentor.mentorship_approach}</p>
+                  <p className="text-gray-700 dark:text-gray-300 whitespace-pre-line">{mentor.mentorship_approach}</p>
                 </CardContent>
               </Card>
             )}
@@ -187,13 +187,13 @@ const MentorProfile = () => {
                           <Briefcase className="h-6 w-6 text-blue-600" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="font-semibold text-gray-900">{exp.role}</h3>
-                          <p className="text-gray-600">{exp.company}</p>
+                          <h3 className="font-semibold text-gray-900 dark:text-white">{exp.role}</h3>
+                          <p className="text-gray-600 dark:text-gray-400">{exp.company}</p>
                           <p className="text-sm text-gray-500 mt-1">
                             {exp.start_date} - {exp.end_date || 'Present'}
                           </p>
                           {exp.description && (
-                            <p className="text-sm text-gray-700 mt-2">{exp.description}</p>
+                            <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">{exp.description}</p>
                           )}
                         </div>
                       </div>
@@ -207,7 +207,7 @@ const MentorProfile = () => {
             {reviews.length > 0 && (
               <Card>
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                     Reviews & Feedback ({reviews.length})
                   </h2>
                   <div className="space-y-4">
@@ -220,7 +220,7 @@ const MentorProfile = () => {
                           </Avatar>
                           <div className="flex-1">
                             <div className="flex items-center justify-between">
-                              <h4 className="font-semibold text-gray-900">{review.studentName}</h4>
+                              <h4 className="font-semibold text-gray-900 dark:text-white">{review.studentName}</h4>
                               <div className="flex items-center gap-1">
                                 <Star className="h-4 w-4 text-yellow-500 fill-current" />
                                 <span className="font-semibold">{review.rating}</span>
@@ -231,7 +231,7 @@ const MentorProfile = () => {
                             </p>
                           </div>
                         </div>
-                        <p className="text-gray-700 text-sm ml-13">{review.feedback}</p>
+                        <p className="text-gray-700 dark:text-gray-300 text-sm ml-13">{review.feedback}</p>
                       </div>
                     ))}
                   </div>
@@ -245,7 +245,7 @@ const MentorProfile = () => {
             {/* Expertise Areas */}
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Expertise Areas</h3>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-3">Expertise Areas</h3>
                 <div className="flex flex-wrap gap-2">
                   {mentor.expertise_areas?.map((area, idx) => (
                     <Badge key={idx} variant="secondary">
@@ -260,7 +260,7 @@ const MentorProfile = () => {
             {mentor.profile?.skills && mentor.profile.skills.length > 0 && (
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="font-bold text-gray-900 mb-3">Skills</h3>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-3">Skills</h3>
                   <div className="flex flex-wrap gap-2">
                     {mentor.profile.skills.slice(0, 10).map((skill, idx) => (
                       <Badge key={idx} variant="outline" className="text-xs">
@@ -280,18 +280,18 @@ const MentorProfile = () => {
             {/* Current Position */}
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-bold text-gray-900 mb-3">Current Position</h3>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-3">Current Position</h3>
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-gray-700">
+                  <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
                     <Briefcase className="h-4 w-4 text-gray-500" />
                     <span className="text-sm">{mentor.profile?.current_role}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-700">
+                  <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
                     <Award className="h-4 w-4 text-gray-500" />
                     <span className="text-sm">{mentor.profile?.current_company}</span>
                   </div>
                   {mentor.profile?.location && (
-                    <div className="flex items-center gap-2 text-gray-700">
+                    <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
                       <MapPin className="h-4 w-4 text-gray-500" />
                       <span className="text-sm">{mentor.profile.location}</span>
                     </div>
@@ -304,7 +304,7 @@ const MentorProfile = () => {
             {mentor.profile?.social_links && Object.keys(mentor.profile.social_links).length > 0 && (
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="font-bold text-gray-900 mb-3">Connect</h3>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-3">Connect</h3>
                   <div className="space-y-2">
                     {Object.entries(mentor.profile.social_links).map(([platform, url]) => (
                       <a

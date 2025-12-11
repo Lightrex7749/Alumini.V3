@@ -112,7 +112,7 @@ const JobApplicationsManager = () => {
           <main className="flex-1 flex items-center justify-center">
             <div className="text-center">
               <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-              <p className="mt-2 text-gray-600">Loading applications...</p>
+              <p className="mt-2 text-gray-600 dark:text-gray-400">Loading applications...</p>
             </div>
           </main>
         </div>
@@ -129,7 +129,7 @@ const JobApplicationsManager = () => {
           <main className="flex-1 flex items-center justify-center">
             <Card>
               <CardContent className="text-center py-12">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Job not found</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Job not found</h3>
                 <Button onClick={() => navigate('/jobs/manage')}>Back to Jobs</Button>
               </CardContent>
             </Card>
@@ -159,8 +159,8 @@ const JobApplicationsManager = () => {
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Jobs
               </Button>
-              <h1 className="text-3xl font-bold text-gray-900">{job.title}</h1>
-              <p className="text-gray-600 mt-1">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{job.title}</h1>
+              <p className="text-gray-600 dark:text-gray-400 mt-1">
                 {job.company} • {job.location} • {applications.length} applications
               </p>
             </div>
@@ -226,7 +226,7 @@ const JobApplicationsManager = () => {
                                         {app.status}
                                       </Badge>
                                     </div>
-                                    <p className="text-sm text-gray-600 mb-2">
+                                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                                       {app.profile?.headline || 'No headline'}
                                     </p>
                                     <div className="flex items-center gap-4 text-xs text-gray-500">

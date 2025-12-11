@@ -159,7 +159,7 @@ const LearningPath = () => {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Learning Paths</h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-400">
             Follow curated learning paths or generate a custom path for your career goals
           </p>
         </div>
@@ -238,12 +238,12 @@ const LearningPath = () => {
                     <CardContent>
                       <div className="space-y-3">
                         <div>
-                          <div className="text-sm font-medium text-gray-700 mb-1">
+                          <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                             {path.total_capsules} Capsules
                           </div>
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-gray-700 mb-2">Skills Covered:</div>
+                          <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Skills Covered:</div>
                           <div className="flex flex-wrap gap-1">
                             {path.skills_covered.slice(0, 5).map((skill, idx) => (
                               <Badge key={idx} variant="secondary" className="text-xs">
@@ -315,7 +315,7 @@ const LearningPath = () => {
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-medium">Your Progress</span>
-                      <span className="text-sm text-gray-600">
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
                         {pathProgress.completed_capsules?.length || 0} / {selectedPath.capsules?.length || 0} completed
                       </span>
                     </div>
@@ -326,19 +326,19 @@ const LearningPath = () => {
                 {/* Stats Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-blue-50 p-4 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Skills Covered</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Skills Covered</div>
                     <div className="text-2xl font-bold text-blue-600">
                       {selectedPath.skills_covered?.length || 0}
                     </div>
                   </div>
                   <div className="bg-green-50 p-4 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Career Outcomes</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Career Outcomes</div>
                     <div className="text-2xl font-bold text-green-600">
                       {selectedPath.career_outcomes?.length || 0}
                     </div>
                   </div>
                   <div className="bg-purple-50 p-4 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Prerequisites</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Prerequisites</div>
                     <div className="text-2xl font-bold text-purple-600">
                       {selectedPath.prerequisites?.length || 0}
                     </div>
@@ -352,7 +352,7 @@ const LearningPath = () => {
                       <Star className="h-4 w-4 text-yellow-500" />
                       Prerequisites
                     </h3>
-                    <ul className="list-disc list-inside space-y-1 text-gray-700">
+                    <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
                       {selectedPath.prerequisites.map((prereq, idx) => (
                         <li key={idx}>{prereq}</li>
                       ))}
@@ -410,7 +410,7 @@ const LearningPath = () => {
                           {/* Order Number */}
                           <div className={cn(
                             "flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold",
-                            isCompleted ? "bg-green-500 text-white" : "bg-gray-200 text-gray-600"
+                            isCompleted ? "bg-green-500 text-white" : "bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400"
                           )}>
                             {isCompleted ? (
                               <CheckCircle2 className="h-5 w-5" />
@@ -427,7 +427,7 @@ const LearningPath = () => {
                                   {capsule?.title || `Capsule ${pathCapsule.order}`}
                                 </h3>
                                 {capsule && (
-                                  <p className="text-gray-600 text-sm line-clamp-2">
+                                  <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
                                     {capsule.content?.substring(0, 150)}...
                                   </p>
                                 )}

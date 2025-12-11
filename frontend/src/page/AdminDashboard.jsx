@@ -337,7 +337,7 @@ const AdminDashboard = () => {
                           'bg-yellow-600'
                         }`}></div>
                         <div className="flex-1">
-                          <p className="text-sm text-gray-900">{activity.message}</p>
+                          <p className="text-sm text-gray-900 dark:text-white">{activity.message}</p>
                           <p className="text-xs text-gray-500 mt-0.5">{activity.time}</p>
                         </div>
                       </div>
