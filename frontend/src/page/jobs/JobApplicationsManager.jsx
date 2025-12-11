@@ -105,7 +105,7 @@ const JobApplicationsManager = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col bg-gray-50">
+      <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
         <MainNavbar />
         <div className="flex flex-1">
           <Sidebar />
@@ -122,7 +122,7 @@ const JobApplicationsManager = () => {
 
   if (!job) {
     return (
-      <div className="min-h-screen flex flex-col bg-gray-50">
+      <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
         <MainNavbar />
         <div className="flex flex-1">
           <Sidebar />
@@ -140,7 +140,7 @@ const JobApplicationsManager = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
       
       <div className="flex flex-1">
@@ -240,8 +240,8 @@ const JobApplicationsManager = () => {
                                       </span>
                                     </div>
                                     {app.cover_letter && (
-                                      <div className="mt-3 p-3 bg-gray-50 rounded-lg">
-                                        <p className="text-sm text-gray-700 line-clamp-3">
+                                      <div className="mt-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                                        <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-3">
                                           {app.cover_letter}
                                         </p>
                                       </div>

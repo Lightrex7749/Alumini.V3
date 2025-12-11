@@ -351,12 +351,12 @@ const AlumniDashboard = () => {
               <CardContent>
                 <div className="space-y-3">
                   {upcomingEvents.map(event => (
-                    <div key={event.id} className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                    <div key={event.id} className="flex items-center justify-between p-3 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                       <div className="flex items-center gap-3">
                         <Calendar className="h-8 w-8 text-blue-600" />
                         <div>
-                          <p className="font-medium text-sm">{event.title}</p>
-                          <p className="text-xs text-gray-500">
+                          <p className="font-medium text-sm dark:text-white">{event.title}</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">
                             {new Date(event.start_date).toLocaleDateString()} • {event.is_virtual ? 'Virtual' : event.location}
                           </p>
                         </div>

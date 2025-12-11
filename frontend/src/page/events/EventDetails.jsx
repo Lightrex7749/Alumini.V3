@@ -120,7 +120,7 @@ const EventDetails = () => {
 
   return (
     <MainLayout>
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
         {/* Header with gradient */}
         <div className="bg-gradient-to-br from-orange-600 via-pink-600 to-purple-600 text-white py-8 mb-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-30"></div>
@@ -292,7 +292,7 @@ const EventDetails = () => {
                   return (
                     <div 
                       key={attendee.id} 
-                      className="flex items-center gap-2 cursor-pointer hover:bg-gray-50 p-2 rounded-lg"
+                      className="flex items-center gap-2 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-lg"
                       onClick={() => navigate(`/profile/${attendee.user_id}`)}
                     >
                       <Avatar className="h-10 w-10">
@@ -300,9 +300,9 @@ const EventDetails = () => {
                         <AvatarFallback>{getInitials(name)}</AvatarFallback>
                       </Avatar>
                       <div>
-                        <p className="text-sm font-semibold">{name}</p>
+                        <p className="text-sm font-semibold dark:text-white">{name}</p>
                         {profile?.current_role && (
-                          <p className="text-xs text-gray-600">{profile.current_role}</p>
+                          <p className="text-xs text-gray-600 dark:text-gray-400">{profile.current_role}</p>
                         )}
                       </div>
                     </div>

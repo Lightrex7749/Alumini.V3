@@ -143,11 +143,11 @@ const SkillGraph = () => {
                   {recommendations.slice(0, 3).map((rec, index) => (
                     <div 
                       key={index} 
-                      className="p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-shadow"
+                      className="p-4 bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow"
                       data-testid={`recommendation-${index}`}
                     >
                       <div className="flex items-start justify-between mb-2">
-                        <h4 className="font-semibold text-lg">{rec.skill_name}</h4>
+                        <h4 className="font-semibold text-lg dark:text-white">{rec.skill_name}</h4>
                         <Badge className={getDemandColor(rec.job_demand)} data-testid="demand-badge">
                           {rec.job_demand.replace('-', ' ')} demand
                         </Badge>
@@ -168,7 +168,7 @@ const SkillGraph = () => {
                         )}
                       </div>
 
-                      <p className="text-sm text-gray-600 mb-3">{rec.reason}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{rec.reason}</p>
 
                       {rec.learning_resources && rec.learning_resources.length > 0 && (
                         <div className="flex flex-wrap gap-2">
@@ -208,12 +208,12 @@ const SkillGraph = () => {
                   {trendingSkills.slice(0, 5).map((trend, index) => (
                     <div 
                       key={index}
-                      className="flex items-center justify-between p-3 bg-white rounded-lg border hover:shadow-sm transition-shadow"
+                      className="flex items-center justify-between p-3 bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 hover:shadow-sm transition-shadow"
                       data-testid={`trending-skill-${index}`}
                     >
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <h5 className="font-semibold">{trend.skill_name}</h5>
+                          <h5 className="font-semibold dark:text-white">{trend.skill_name}</h5>
                           <Badge variant="outline" className="text-xs">
                             {trend.category}
                           </Badge>

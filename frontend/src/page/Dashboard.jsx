@@ -41,7 +41,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
       
       <div className="flex flex-1">
@@ -99,17 +99,17 @@ const Dashboard = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <button className="p-4 border rounded-lg hover:bg-gray-50 transition-colors text-left">
-                    <div className="text-sm font-medium text-gray-900">Complete Profile</div>
-                    <div className="text-xs text-gray-500 mt-1">Add your experience and skills</div>
+                  <button className="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-left dark:border-gray-700">
+                    <div className="text-sm font-medium text-gray-900 dark:text-white">Complete Profile</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Add your experience and skills</div>
                   </button>
-                  <button className="p-4 border rounded-lg hover:bg-gray-50 transition-colors text-left">
-                    <div className="text-sm font-medium text-gray-900">Browse Jobs</div>
-                    <div className="text-xs text-gray-500 mt-1">Find your next opportunity</div>
+                  <button className="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-left dark:border-gray-700">
+                    <div className="text-sm font-medium text-gray-900 dark:text-white">Browse Jobs</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Find your next opportunity</div>
                   </button>
-                  <button className="p-4 border rounded-lg hover:bg-gray-50 transition-colors text-left">
-                    <div className="text-sm font-medium text-gray-900">Find a Mentor</div>
-                    <div className="text-xs text-gray-500 mt-1">Connect with experienced alumni</div>
+                  <button className="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-left dark:border-gray-700">
+                    <div className="text-sm font-medium text-gray-900 dark:text-white">Find a Mentor</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Connect with experienced alumni</div>
                   </button>
                 </div>
               </CardContent>

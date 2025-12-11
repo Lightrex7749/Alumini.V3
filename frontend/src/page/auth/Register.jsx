@@ -282,29 +282,29 @@ const Register = () => {
                         value={watchedFields.role}
                         onValueChange={(value) => setValue('role', value)}
                       >
-                        <div className="flex items-center space-x-3 p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                        <div className="flex items-center space-x-3 p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
                           <RadioGroupItem value="student" id="student" />
                           <Label htmlFor="student" className="flex items-center space-x-3 cursor-pointer flex-1">
                             <GraduationCap className="w-5 h-5 text-blue-600" />
                             <div>
-                              <div className="font-medium">Student</div>
-                              <div className="text-xs text-gray-500">Currently enrolled student</div>
+                              <div className="font-medium dark:text-white">Student</div>
+                              <div className="text-xs text-gray-500 dark:text-gray-400">Currently enrolled student</div>
                             </div>
                           </Label>
                         </div>
 
-                        <div className="flex items-center space-x-3 p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                        <div className="flex items-center space-x-3 p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
                           <RadioGroupItem value="alumni" id="alumni" />
                           <Label htmlFor="alumni" className="flex items-center space-x-3 cursor-pointer flex-1">
                             <UserCircle className="w-5 h-5 text-green-600" />
                             <div>
-                              <div className="font-medium">Alumni</div>
-                              <div className="text-xs text-gray-500">Graduate of the institution</div>
+                              <div className="font-medium dark:text-white">Alumni</div>
+                              <div className="text-xs text-gray-500 dark:text-gray-400">Graduate of the institution</div>
                             </div>
                           </Label>
                         </div>
 
-                        <div className="flex items-center space-x-3 p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                        <div className="flex items-center space-x-3 p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
                           <RadioGroupItem value="recruiter" id="recruiter" />
                           <Label htmlFor="recruiter" className="flex items-center space-x-3 cursor-pointer flex-1">
                             <Briefcase className="w-5 h-5 text-purple-600" />

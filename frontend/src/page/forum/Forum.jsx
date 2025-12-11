@@ -176,8 +176,8 @@ const Forum = () => {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-12 bg-gray-50 rounded-lg">
-                <h3 className="text-lg font-semibold mb-2">No posts found</h3>
+              <div className="text-center py-12 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <h3 className="text-lg font-semibold mb-2 dark:text-white">No posts found</h3>
                 <p className="text-gray-600 mb-4">
                   {searchTerm || selectedTag
                     ? 'Try adjusting your filters'
@@ -204,8 +204,8 @@ const Forum = () => {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-12 bg-gray-50 rounded-lg">
-                <h3 className="text-lg font-semibold mb-2">No popular posts yet</h3>
+              <div className="text-center py-12 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <h3 className="text-lg font-semibold mb-2 dark:text-white">No popular posts yet</h3>
                 <p className="text-gray-600 mb-4">
                   Start engaging with posts to see popular content here
                 </p>

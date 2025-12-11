@@ -433,11 +433,11 @@ const KnowledgeCapsuleDetail = () => {
                     {aiInsights.similar_capsules.map((similar) => (
                       <div 
                         key={similar.id}
-                        className="p-3 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors cursor-pointer"
+                        className="p-3 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 transition-colors cursor-pointer"
                         onClick={() => navigate(`/knowledge/${similar.id}`)}
                       >
                         <div className="flex items-start justify-between">
-                          <p className="font-medium text-sm text-gray-900 flex-1">
+                          <p className="font-medium text-sm text-gray-900 dark:text-white flex-1">
                             {similar.title}
                           </p>
                           <Badge variant="outline" className="ml-2 text-xs">
