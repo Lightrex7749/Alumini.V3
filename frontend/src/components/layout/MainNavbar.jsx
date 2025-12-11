@@ -157,8 +157,8 @@ const MainNavbar = () => {
                 data-testid={`nav-${link.name.toLowerCase()}-link`}
                 className={`relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 overflow-hidden group ${
                   isActive(link.path)
-                    ? 'text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50 shadow-md shadow-blue-100/50'
-                    : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                    ? 'text-blue-600 dark:text-blue-400 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 shadow-md shadow-blue-100/50 dark:shadow-blue-900/30'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                 }`}
               >
                 {isActive(link.path) && (
@@ -176,7 +176,7 @@ const MainNavbar = () => {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button 
-                    className="px-4 py-2 rounded-xl text-sm font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 flex items-center gap-1 transition-all duration-300"
+                    className="px-4 py-2 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 flex items-center gap-1 transition-all duration-300"
                     data-testid="nav-more-dropdown"
                   >
                     More

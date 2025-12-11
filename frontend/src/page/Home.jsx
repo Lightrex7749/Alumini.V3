@@ -500,7 +500,7 @@ const Home = () => {
       </section>
 
       {/* Features Section - Modern Grid with Tilt Cards */}
-      <section id="features" className="py-24 px-4 bg-gradient-to-b from-white to-slate-50" data-testid="features-section">
+      <section id="features" className="py-24 px-4 bg-gradient-to-b from-white to-slate-50 dark:from-gray-900 dark:to-gray-800" data-testid="features-section">
         <div className="max-w-7xl mx-auto">
           <BlurFade delay={0.1}>
             <div className="text-center mb-16">
@@ -532,10 +532,10 @@ const Home = () => {
                       <div className={`w-14 h-14 bg-gradient-to-br ${feature.gradient} rounded-xl flex items-center justify-center mb-6 shadow-lg`}>
                         <Icon className="w-7 h-7 text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                         {feature.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{feature.description}</p>
                     </div>
                   </TiltCard>
                 </StaggerItem>
@@ -583,7 +583,7 @@ const Home = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{value.title}</h3>
-                        <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{value.description}</p>
                       </div>
                     </div>
                   </HoverCard>
@@ -595,7 +595,7 @@ const Home = () => {
       </section>
 
       {/* What We Offer Section */}
-      <section className="py-24 px-4 bg-gradient-to-b from-slate-50 to-white" data-testid="detailed-features-section">
+      <section className="py-24 px-4 bg-gradient-to-b from-slate-50 to-white dark:from-gray-800 dark:to-gray-900" data-testid="detailed-features-section">
         <div className="max-w-7xl mx-auto">
           <BlurFade delay={0.1}>
             <div className="text-center mb-16">
@@ -603,7 +603,7 @@ const Home = () => {
                 <span className="text-gray-900 dark:text-white">What We </span>
                 <GradientHeading gradient="from-purple-600 to-cyan-600">Offer</GradientHeading>
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Comprehensive tools and features to support your professional journey
               </p>
             </div>
@@ -624,7 +624,7 @@ const Home = () => {
               return (
                 <StaggerItem key={index}>
                   <SpotlightCard
-                    className="bg-white p-8 rounded-2xl h-full"
+                    className="bg-white dark:bg-gray-800 p-8 rounded-2xl h-full border border-gray-100 dark:border-gray-700"
                     spotlightColor={`rgba(99, 102, 241, 0.1)`}
                     data-testid={`detailed-feature-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
                   >
@@ -636,7 +636,7 @@ const Home = () => {
                         <Icon className="w-7 h-7 text-white" />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{feature.description}</p>
                     </div>
                   </SpotlightCard>
                 </StaggerItem>
