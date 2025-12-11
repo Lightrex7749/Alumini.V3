@@ -98,10 +98,10 @@ const FilterSidebar = ({ filters, onFilterChange, onClearFilters }) => {
   );
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-4">
+    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-bold text-gray-900">Filters</h2>
+        <h2 className="text-lg font-bold text-gray-900 dark:text-white">Filters</h2>
         {activeFiltersCount > 0 && (
           <Button
             data-testid="clear-filters-button"

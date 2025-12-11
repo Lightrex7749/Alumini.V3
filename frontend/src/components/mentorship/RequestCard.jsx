@@ -31,7 +31,7 @@ const RequestCard = ({ request, userProfile, onAccept, onReject, onCancel, onVie
   };
 
   return (
-    <Card data-testid={`request-card-${request.id}`} className="hover:shadow-md transition-shadow">
+    <Card data-testid={`request-card-${request.id}`} className="hover:shadow-md transition-shadow bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
       <CardContent className="p-5">
         {/* Header with profile info */}
         <div className="flex items-start gap-4 mb-4">
@@ -42,8 +42,8 @@ const RequestCard = ({ request, userProfile, onAccept, onReject, onCancel, onVie
           <div className="flex-1">
             <div className="flex items-center justify-between">
               <div>
-                <h4 className="font-semibold text-gray-900">{userProfile?.name}</h4>
-                <p className="text-sm text-gray-600">{userProfile?.headline || userProfile?.current_role}</p>
+                <h4 className="font-semibold text-gray-900 dark:text-white">{userProfile?.name}</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{userProfile?.headline || userProfile?.current_role}</p>
               </div>
               {getStatusBadge()}
             </div>
@@ -55,23 +55,23 @@ const RequestCard = ({ request, userProfile, onAccept, onReject, onCancel, onVie
           {/* Goals */}
           {request.goals && (
             <div>
-              <p className="text-xs font-semibold text-gray-500 uppercase mb-1">Goals</p>
-              <p className="text-sm text-gray-700">{request.goals}</p>
+              <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-1">Goals</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">{request.goals}</p>
             </div>
           )}
 
           {/* Message */}
           {request.request_message && (
             <div>
-              <p className="text-xs font-semibold text-gray-500 uppercase mb-1">Message</p>
-              <p className="text-sm text-gray-700 line-clamp-3">{request.request_message}</p>
+              <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-1">Message</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-3">{request.request_message}</p>
             </div>
           )}
 
           {/* Preferred Topics */}
           {request.preferred_topics && request.preferred_topics.length > 0 && (
             <div>
-              <p className="text-xs font-semibold text-gray-500 uppercase mb-1">Interested In</p>
+              <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-1">Interested In</p>
               <div className="flex flex-wrap gap-1.5">
                 {request.preferred_topics.map((topic, idx) => (
                   <Badge key={idx} variant="secondary" className="text-xs">
@@ -84,14 +84,14 @@ const RequestCard = ({ request, userProfile, onAccept, onReject, onCancel, onVie
 
           {/* Rejection Reason */}
           {request.status === 'rejected' && request.rejection_reason && (
-            <div className="p-3 bg-red-50 rounded-md">
-              <p className="text-xs font-semibold text-red-700 uppercase mb-1">Reason</p>
-              <p className="text-sm text-red-600">{request.rejection_reason}</p>
+            <div className="p-3 bg-red-50 dark:bg-red-900/30 rounded-md">
+              <p className="text-xs font-semibold text-red-700 dark:text-red-400 uppercase mb-1">Reason</p>
+              <p className="text-sm text-red-600 dark:text-red-400">{request.rejection_reason}</p>
             </div>
           )}
 
           {/* Timestamps */}
-          <div className="flex items-center gap-4 text-xs text-gray-500 pt-2 border-t">
+          <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400 pt-2 border-t dark:border-gray-700">
             <div className="flex items-center gap-1">
               <Calendar className="h-3.5 w-3.5" />
               <span>Requested {format(new Date(request.requested_at), 'MMM d, yyyy')}</span>

@@ -30,7 +30,7 @@ const AlumniListItem = ({ profile, onViewProfile }) => {
   return (
     <Card
       data-testid={`alumni-list-item-${profile.id}`}
-      className="hover:shadow-md transition-shadow duration-200 cursor-pointer"
+      className="hover:shadow-md transition-shadow duration-200 cursor-pointer bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700"
       onClick={() => onViewProfile(profile)}
     >
       <CardContent className="p-6">
@@ -45,7 +45,7 @@ const AlumniListItem = ({ profile, onViewProfile }) => {
                 </AvatarFallback>
               </Avatar>
               {profile.is_verified && (
-                <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5">
+                <div className="absolute -bottom-1 -right-1 bg-white dark:bg-gray-800 rounded-full p-0.5">
                   <CheckCircle2 className="h-5 w-5 text-blue-600" />
                 </div>
               )}
@@ -57,16 +57,16 @@ const AlumniListItem = ({ profile, onViewProfile }) => {
             <div className="space-y-3">
               {/* Name and Headline */}
               <div>
-                <h3 className="font-semibold text-xl text-gray-900 hover:text-blue-600 transition-colors">
+                <h3 className="font-semibold text-xl text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   {profile.name}
                 </h3>
-                <p className="text-sm text-gray-600 mt-1">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                   {profile.headline || profile.current_role}
                 </p>
               </div>
 
               {/* Company, Location, Experience */}
-              <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-600">
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
                 {profile.current_company && (
                   <div className="flex items-center gap-1.5">
                     <Briefcase className="h-4 w-4" />
@@ -89,7 +89,7 @@ const AlumniListItem = ({ profile, onViewProfile }) => {
 
               {/* Bio */}
               {profile.bio && (
-                <p className="text-sm text-gray-600 line-clamp-2">
+                <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
                   {profile.bio}
                 </p>
               )}

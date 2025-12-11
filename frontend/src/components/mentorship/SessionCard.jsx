@@ -24,18 +24,18 @@ const SessionCard = ({ session, onViewDetails, onJoinMeeting, onProvideFeedback 
   };
 
   return (
-    <Card data-testid={`session-card-${session.id}`} className="hover:shadow-md transition-shadow">
+    <Card data-testid={`session-card-${session.id}`} className="hover:shadow-md transition-shadow bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
       <CardContent className="p-5">
         <div className="flex items-start justify-between mb-3">
           <div className="flex-1">
-            <h4 className="font-semibold text-gray-900 mb-1">
+            <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
               {session.agenda || 'Mentorship Session'}
             </h4>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
               <Calendar className="h-4 w-4" />
               <span>{format(sessionDate, 'EEEE, MMMM d, yyyy')}</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600 mt-1">
+            <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mt-1">
               <Clock className="h-4 w-4" />
               <span>{format(sessionDate, 'h:mm a')} • {session.duration} minutes</span>
             </div>
@@ -44,28 +44,28 @@ const SessionCard = ({ session, onViewDetails, onJoinMeeting, onProvideFeedback 
         </div>
 
         {session.meeting_link && !isCancelled && (
-          <div className="flex items-center gap-2 text-sm text-blue-600 bg-blue-50 p-2 rounded-md mb-3">
+          <div className="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 p-2 rounded-md mb-3">
             <Video className="h-4 w-4" />
             <span className="text-xs">Meeting link available</span>
           </div>
         )}
 
         {session.notes && (
-          <div className="mt-3 p-3 bg-gray-50 rounded-md">
+          <div className="mt-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-md">
             <div className="flex items-start gap-2">
-              <FileText className="h-4 w-4 text-gray-500 mt-0.5" />
-              <p className="text-sm text-gray-700 line-clamp-2">{session.notes}</p>
+              <FileText className="h-4 w-4 text-gray-500 dark:text-gray-400 mt-0.5" />
+              <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-2">{session.notes}</p>
             </div>
           </div>
         )}
 
         {session.feedback && session.rating && (
-          <div className="mt-3 p-3 bg-green-50 rounded-md">
+          <div className="mt-3 p-3 bg-green-50 dark:bg-green-900/30 rounded-md">
             <div className="flex items-center gap-2 mb-1">
               <Star className="h-4 w-4 text-yellow-500 fill-current" />
-              <span className="text-sm font-semibold">{session.rating}/5</span>
+              <span className="text-sm font-semibold dark:text-white">{session.rating}/5</span>
             </div>
-            <p className="text-sm text-gray-700 line-clamp-2">{session.feedback}</p>
+            <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-2">{session.feedback}</p>
           </div>
         )}
       </CardContent>

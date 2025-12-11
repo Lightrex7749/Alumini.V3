@@ -23,7 +23,7 @@ const MentorCard = ({ mentor, onRequestMentorship }) => {
   return (
     <Card
       data-testid={`mentor-card-${mentor.id}`}
-      className="hover:shadow-lg transition-shadow duration-200 cursor-pointer group"
+      className="hover:shadow-lg transition-shadow duration-200 cursor-pointer group bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700"
       onClick={() => navigate(`/mentorship/mentor/${mentor.user_id}`)}
     >
       <CardContent className="p-6">
@@ -44,10 +44,10 @@ const MentorCard = ({ mentor, onRequestMentorship }) => {
           </div>
 
           <div className="space-y-1 w-full">
-            <h3 className="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">
+            <h3 className="font-semibold text-lg text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
               {mentor.profile?.name}
             </h3>
-            <p className="text-sm text-gray-600 line-clamp-1">
+            <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-1">
               {mentor.profile?.headline || mentor.profile?.current_role}
             </p>
           </div>
@@ -58,9 +58,9 @@ const MentorCard = ({ mentor, onRequestMentorship }) => {
           <div className="flex items-center gap-1 text-yellow-600">
             <Star className="h-4 w-4 fill-current" />
             <span className="font-semibold">{mentor.rating.toFixed(1)}</span>
-            <span className="text-gray-500">({mentor.total_reviews})</span>
+            <span className="text-gray-500 dark:text-gray-400">({mentor.total_reviews})</span>
           </div>
-          <div className="flex items-center gap-1 text-gray-600">
+          <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
             <BookOpen className="h-4 w-4" />
             <span>{mentor.total_sessions} sessions</span>
           </div>
@@ -103,8 +103,8 @@ const MentorCard = ({ mentor, onRequestMentorship }) => {
         )}
 
         {/* Current Mentees */}
-        <div className="mt-4 pt-4 border-t border-gray-100">
-          <p className="text-xs text-gray-500 text-center">
+        <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+          <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
             Currently mentoring {mentor.current_mentees_count} of {mentor.max_mentees} mentees
           </p>
         </div>
