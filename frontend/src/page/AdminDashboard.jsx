@@ -80,7 +80,7 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <MainNavbar />
       
       <div className="flex flex-1">
@@ -190,85 +190,85 @@ const AdminDashboard = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  <Link to="/admin/users" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-users">
-                    <Users className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Manage Users</div>
-                    <div className="text-xs text-gray-500 mt-1">View, edit & delete users</div>
+                  <Link to="/admin/users" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-users">
+                    <Users className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">Manage Users</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">View, edit & delete users</div>
                   </Link>
-                  <Link to="/admin/verifications" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-verifications">
-                    <CheckCircle className="h-8 w-8 text-green-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Verifications</div>
-                    <div className="text-xs text-gray-500 mt-1">Approve/reject profiles</div>
+                  <Link to="/admin/verifications" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-verifications">
+                    <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">Verifications</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Approve/reject profiles</div>
                   </Link>
-                  <Link to="/admin/moderation" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-moderation">
-                    <AlertCircle className="h-8 w-8 text-yellow-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Content Moderation</div>
-                    <div className="text-xs text-gray-500 mt-1">Review flagged content</div>
+                  <Link to="/admin/moderation" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-moderation">
+                    <AlertCircle className="h-8 w-8 text-yellow-600 dark:text-yellow-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">Content Moderation</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Review flagged content</div>
                   </Link>
-                  <Link to="/admin/jobs" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-jobs">
-                    <Briefcase className="h-8 w-8 text-indigo-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Jobs Management</div>
-                    <div className="text-xs text-gray-500 mt-1">Manage all job postings</div>
+                  <Link to="/admin/jobs" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-jobs">
+                    <Briefcase className="h-8 w-8 text-indigo-600 dark:text-indigo-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">Jobs Management</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Manage all job postings</div>
                   </Link>
-                  <Link to="/admin/events" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-events">
-                    <Calendar className="h-8 w-8 text-orange-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Events Management</div>
-                    <div className="text-xs text-gray-500 mt-1">Manage all events</div>
+                  <Link to="/admin/events" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-events">
+                    <Calendar className="h-8 w-8 text-orange-600 dark:text-orange-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">Events Management</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Manage all events</div>
                   </Link>
-                  <Link to="/admin/mentorship" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-mentorship">
-                    <Users className="h-8 w-8 text-teal-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Mentorship</div>
-                    <div className="text-xs text-gray-500 mt-1">Manage mentorships</div>
+                  <Link to="/admin/mentorship" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-mentorship">
+                    <Users className="h-8 w-8 text-teal-600 dark:text-teal-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">Mentorship</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Manage mentorships</div>
                   </Link>
-                  <Link to="/admin/badges" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-badges">
-                    <Award className="h-8 w-8 text-yellow-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Badge Management</div>
-                    <div className="text-xs text-gray-500 mt-1">Create & manage badges</div>
+                  <Link to="/admin/badges" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-badges">
+                    <Award className="h-8 w-8 text-yellow-600 dark:text-yellow-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">Badge Management</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Create & manage badges</div>
                   </Link>
-                  <Link to="/admin/knowledge-capsules" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-capsules">
-                    <AlertCircle className="h-8 w-8 text-pink-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Knowledge Capsules</div>
-                    <div className="text-xs text-gray-500 mt-1">Manage capsules</div>
+                  <Link to="/admin/knowledge-capsules" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-capsules">
+                    <AlertCircle className="h-8 w-8 text-pink-600 dark:text-pink-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">Knowledge Capsules</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Manage capsules</div>
                   </Link>
-                  <Link to="/admin/email-queue" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-email">
-                    <AlertCircle className="h-8 w-8 text-cyan-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Email Queue</div>
-                    <div className="text-xs text-gray-500 mt-1">Monitor email delivery</div>
+                  <Link to="/admin/email-queue" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-email">
+                    <AlertCircle className="h-8 w-8 text-cyan-600 dark:text-cyan-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">Email Queue</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Monitor email delivery</div>
                   </Link>
-                  <Link to="/admin/notifications" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-notifications">
-                    <AlertCircle className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Notifications</div>
-                    <div className="text-xs text-gray-500 mt-1">Send system notifications</div>
+                  <Link to="/admin/notifications" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-notifications">
+                    <AlertCircle className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">Notifications</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Send system notifications</div>
                   </Link>
-                  <Link to="/admin/audit-logs" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-audit">
-                    <AlertCircle className="h-8 w-8 text-gray-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Audit Logs</div>
-                    <div className="text-xs text-gray-500 mt-1">View admin actions</div>
+                  <Link to="/admin/audit-logs" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-audit">
+                    <AlertCircle className="h-8 w-8 text-gray-600 dark:text-gray-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">Audit Logs</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">View admin actions</div>
                   </Link>
-                  <Link to="/admin/file-uploads" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-files">
-                    <AlertCircle className="h-8 w-8 text-red-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">File Uploads</div>
-                    <div className="text-xs text-gray-500 mt-1">Manage uploaded files</div>
+                  <Link to="/admin/file-uploads" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-files">
+                    <AlertCircle className="h-8 w-8 text-red-600 dark:text-red-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">File Uploads</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Manage uploaded files</div>
                   </Link>
-                  <Link to="/admin/analytics" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-analytics">
-                    <TrendingUp className="h-8 w-8 text-purple-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">Analytics</div>
-                    <div className="text-xs text-gray-500 mt-1">View platform stats</div>
+                  <Link to="/admin/analytics" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-analytics">
+                    <TrendingUp className="h-8 w-8 text-purple-600 dark:text-purple-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">Analytics</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">View platform stats</div>
                   </Link>
-                  <Link to="/admin/settings" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all" data-testid="admin-link-settings">
-                    <CheckCircle className="h-8 w-8 text-slate-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">System Settings</div>
-                    <div className="text-xs text-gray-500 mt-1">Configure platform</div>
+                  <Link to="/admin/settings" className="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all" data-testid="admin-link-settings">
+                    <CheckCircle className="h-8 w-8 text-slate-600 dark:text-slate-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">System Settings</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Configure platform</div>
                   </Link>
-                  <Link to="/admin/datasets/history" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-300" data-testid="admin-link-datasets">
-                    <TrendingUp className="h-8 w-8 text-blue-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">AI Dataset Upload</div>
-                    <div className="text-xs text-gray-500 mt-1">Upload & manage datasets</div>
+                  <Link to="/admin/datasets/history" className="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-blue-300 dark:border-blue-700" data-testid="admin-link-datasets">
+                    <TrendingUp className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">AI Dataset Upload</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Upload & manage datasets</div>
                   </Link>
-                  <Link to="/admin/ai/monitor" className="p-4 border rounded-lg hover:bg-gray-50 hover:border-red-500 transition-all bg-gradient-to-br from-purple-50 to-pink-50 border-purple-300" data-testid="admin-link-ai-monitor">
-                    <Activity className="h-8 w-8 text-purple-600 mb-2" />
-                    <div className="text-sm font-medium text-gray-900">AI System Monitor</div>
-                    <div className="text-xs text-gray-500 mt-1">Monitor AI health & metrics</div>
+                  <Link to="/admin/ai/monitor" className="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-red-500 dark:hover:border-red-400 transition-all bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-purple-300 dark:border-purple-700" data-testid="admin-link-ai-monitor">
+                    <Activity className="h-8 w-8 text-purple-600 dark:text-purple-400 mb-2" />
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">AI System Monitor</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Monitor AI health & metrics</div>
                   </Link>
                 </div>
               </CardContent>
