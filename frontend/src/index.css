@@ -147,6 +147,17 @@ code {
     .glass {
         @apply bg-white/80 backdrop-blur-xl border border-white/20;
     }
+
+    /* Hide scrollbar for animated tabs */
+    .no-visible-scrollbar {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .no-visible-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
     
     .glass-dark {
         @apply bg-gray-900/80 backdrop-blur-xl border border-gray-700/30;

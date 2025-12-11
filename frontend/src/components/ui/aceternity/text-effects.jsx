@@ -3,6 +3,9 @@ import React from "react";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+// Re-export FlipWords from the dedicated component
+export { FlipWords } from "../flip-words";
+
 /**
  * Text Generate Effect - Aceternity UI Style
  * Fade in text word by word
@@ -42,39 +45,6 @@ export const TextGenerateEffect = ({ words, className, filter = true, duration =
         </motion.span>
       ))}
     </div>
-  );
-};
-
-/**
- * Flip Words - Aceternity UI Style
- * Cycle through words with flip animation
- */
-export const FlipWords = ({ words, duration = 3000, className }) => {
-  const [currentWord, setCurrentWord] = React.useState(0);
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWord((prev) => (prev + 1) % words.length);
-    }, duration);
-    return () => clearInterval(interval);
-  }, [words.length, duration]);
-
-  return (
-    <span className={cn("inline-block", className)}>
-      <motion.span
-        key={currentWord}
-        initial={{ opacity: 0, y: 20, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: -20, scale: 0.9 }}
-        transition={{ 
-          duration: 0.6, 
-          ease: [0.22, 1, 0.36, 1]
-        }}
-        className="inline-block"
-      >
-        {words[currentWord]}
-      </motion.span>
-    </span>
   );
 };
 

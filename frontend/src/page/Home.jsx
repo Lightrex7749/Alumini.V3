@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import MainNavbar from '@/components/layout/MainNavbar';
 import Footer from '@/components/layout/Footer';
 import { ArrowRight, Users, Briefcase, Calendar, Award, MessageSquare, UserCheck, Target, Heart, TrendingUp, Network, Route, Map, CreditCard, BookOpen, BarChart3, Sparkles, Star, Zap, Globe, Shield } from 'lucide-react';
+import { BackgroundDots } from '@/components/ui/background-grids';
+import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 
 // Premium Aceternity UI Components
 import { 
@@ -190,15 +192,28 @@ const Home = () => {
 
       {/* Hero Section - Premium Design with Spotlight */}
       <section className="relative flex-1 flex items-center justify-center px-4 py-16 md:py-24 overflow-hidden min-h-[90vh]" data-testid="hero-section">
+        {/* Background Dots with Radial Fade */}
+        <BackgroundDots className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/90 via-white/80 to-blue-50/90 dark:from-gray-950/90 dark:via-gray-900/80 dark:to-blue-950/90" />
+        </BackgroundDots>
+        
         {/* Spotlight Effect */}
         <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="blue" />
         
-        {/* Gradient Background */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* Enhanced Gradient Background with Animated Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Animated gradient orbs */}
           <div className="absolute top-0 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
           <div className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }}></div>
           <div className="absolute -bottom-20 left-1/3 w-72 h-72 bg-gradient-to-br from-cyan-400/15 to-blue-400/15 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }}></div>
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+          
+          {/* Floating geometric shapes */}
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-blue-200/30 dark:border-blue-800/30 rounded-lg rotate-12 animate-float" style={{ animationDelay: '0s' }}></div>
+          <div className="absolute top-1/3 right-1/4 w-24 h-24 border border-purple-200/30 dark:border-purple-800/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-1/4 right-1/3 w-28 h-28 border border-cyan-200/30 dark:border-cyan-800/30 rounded-lg -rotate-12 animate-float" style={{ animationDelay: '2s' }}></div>
+          
+          {/* Radial gradient overlay for depth */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_70%)]"></div>
         </div>
 
         <div className="relative max-w-5xl text-center space-y-8 z-10">
@@ -272,6 +287,71 @@ const Home = () => {
               </div>
             </div>
           </BlurFade>
+        </div>
+      </section>
+
+      {/* Bento Grid Features Section */}
+      <section className="py-20 px-4 bg-white dark:bg-gray-950" data-testid="bento-features">
+        <div className="max-w-7xl mx-auto">
+          <BlurFade delay={0.1}>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                <GradientHeading gradient="from-blue-600 via-purple-600 to-cyan-500">
+                  Everything You Need to Succeed
+                </GradientHeading>
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Powerful features designed to connect, engage, and empower your alumni network
+              </p>
+            </div>
+          </BlurFade>
+
+          <BentoGrid className="max-w-7xl mx-auto">
+            <BentoGridItem
+              title="Smart Alumni Directory"
+              description="AI-powered search and filtering to find the right connections instantly"
+              header={
+                <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 items-center justify-center">
+                  <Users className="h-12 w-12 text-white" />
+                </div>
+              }
+              icon={<Users className="h-4 w-4 text-blue-500" />}
+              className="md:col-span-2"
+            />
+            <BentoGridItem
+              title="Job Portal"
+              description="Connect alumni with exclusive career opportunities"
+              header={
+                <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 items-center justify-center">
+                  <Briefcase className="h-12 w-12 text-white" />
+                </div>
+              }
+              icon={<Briefcase className="h-4 w-4 text-purple-500" />}
+              className="md:col-span-1"
+            />
+            <BentoGridItem
+              title="Events & Networking"
+              description="Host and manage alumni events with ease"
+              header={
+                <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 items-center justify-center">
+                  <Calendar className="h-12 w-12 text-white" />
+                </div>
+              }
+              icon={<Calendar className="h-4 w-4 text-cyan-500" />}
+              className="md:col-span-1"
+            />
+            <BentoGridItem
+              title="Mentorship Program"
+              description="Connect experienced alumni with those seeking guidance"
+              header={
+                <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 items-center justify-center">
+                  <Award className="h-12 w-12 text-white" />
+                </div>
+              }
+              icon={<Award className="h-4 w-4 text-amber-500" />}
+              className="md:col-span-2"
+            />
+          </BentoGrid>
         </div>
       </section>
 

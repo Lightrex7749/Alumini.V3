@@ -139,6 +139,14 @@ module.exports = {
   			'gradient-x': 'gradient-x 4s ease infinite',
   			'shimmer': 'shimmer 2s infinite linear',
   			'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
+  		},
+  		backgroundImage: {
+  			'grid-white': 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'32\' height=\'32\' fill=\'none\' stroke=\'rgb(255 255 255 / 0.05)\'%3e%3cpath d=\'M0 .5H31.5V32\'/%3e%3c/svg%3e")',
+  			'grid-black': 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'32\' height=\'32\' fill=\'none\' stroke=\'rgb(0 0 0 / 0.1)\'%3e%3cpath d=\'M0 .5H31.5V32\'/%3e%3c/svg%3e")',
+  			'grid-small-white': 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 16 16\' width=\'16\' height=\'16\' fill=\'none\' stroke=\'rgb(255 255 255 / 0.05)\'%3e%3cpath d=\'M0 .5H15.5V16\'/%3e%3c/svg%3e")',
+  			'grid-small-black': 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 16 16\' width=\'16\' height=\'16\' fill=\'none\' stroke=\'rgb(0 0 0 / 0.1)\'%3e%3cpath d=\'M0 .5H15.5V16\'/%3e%3c/svg%3e")',
+  			'dot-white': 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'16\' height=\'16\' fill=\'none\'%3e%3ccircle fill=\'rgb(255 255 255 / 0.1)\' cx=\'10\' cy=\'10\' r=\'1.625\'/%3e%3c/svg%3e")',
+  			'dot-black': 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'16\' height=\'16\' fill=\'none\'%3e%3ccircle fill=\'rgb(0 0 0 / 0.1)\' cx=\'10\' cy=\'10\' r=\'1.625\'/%3e%3c/svg%3e")',
   		}
   	}
   },
