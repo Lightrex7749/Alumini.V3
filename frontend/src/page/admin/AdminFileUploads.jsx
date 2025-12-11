@@ -247,12 +247,12 @@ const AdminFileUploads = () => {
                   <table className="w-full">
                     <thead className="border-b">
                       <tr className="text-left">
-                        <th className="pb-3 font-medium text-gray-700">File Name</th>
-                        <th className="pb-3 font-medium text-gray-700">Type</th>
-                        <th className="pb-3 font-medium text-gray-700">Size</th>
-                        <th className="pb-3 font-medium text-gray-700">Uploaded By</th>
-                        <th className="pb-3 font-medium text-gray-700">Upload Date</th>
-                        <th className="pb-3 font-medium text-gray-700">Actions</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">File Name</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Type</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Size</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Uploaded By</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Upload Date</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Actions</th>
                       </tr>
                     </thead>
                     <tbody>

@@ -181,7 +181,7 @@ const ProfileView = () => {
               {profile.experience_timeline && profile.experience_timeline.length > 0 && (
                 <Card>
                   <CardContent className="p-6">
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">Experience</h2>
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Experience</h2>
                     <div className="space-y-6">
                       {profile.experience_timeline.map((exp, idx) => (
                         <div key={idx} className="flex gap-4">
@@ -189,7 +189,7 @@ const ProfileView = () => {
                             <Briefcase className="h-7 w-7 text-blue-600" />
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-semibold text-lg text-gray-900">{exp.role}</h3>
+                            <h3 className="font-semibold text-lg text-gray-900 dark:text-white">{exp.role}</h3>
                             <p className="text-gray-600">{exp.company}</p>
                             <p className="text-sm text-gray-500 mt-1">
                               {new Date(exp.start_date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
@@ -214,11 +214,11 @@ const ProfileView = () => {
               {profile.education_details && profile.education_details.length > 0 && (
                 <Card>
                   <CardContent className="p-6">
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">Education</h2>
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Education</h2>
                     <div className="space-y-4">
                       {profile.education_details.map((edu, idx) => (
                         <div key={idx}>
-                          <h3 className="font-semibold text-lg text-gray-900">
+                          <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
                             {edu.degree} in {edu.field}
                           </h3>
                           <p className="text-gray-600">{edu.institution}</p>
@@ -242,7 +242,7 @@ const ProfileView = () => {
               {profile.skills && profile.skills.length > 0 && (
                 <Card>
                   <CardContent className="p-6">
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">Skills</h2>
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Skills</h2>
                     <div className="flex flex-wrap gap-2">
                       {profile.skills.map((skill, idx) => (
                         <Badge key={idx} variant="secondary" className="text-sm">
@@ -258,7 +258,7 @@ const ProfileView = () => {
               {Object.keys(socialLinks).length > 0 && (
                 <Card>
                   <CardContent className="p-6">
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">Connect</h2>
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Connect</h2>
                     <div className="space-y-2">
                       {socialLinks.linkedin && (
                         <Button
@@ -309,7 +309,7 @@ const ProfileView = () => {
               {profile.achievements && profile.achievements.length > 0 && (
                 <Card>
                   <CardContent className="p-6">
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">Achievements</h2>
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Achievements</h2>
                     <ul className="space-y-2">
                       {profile.achievements.map((achievement, idx) => (
                         <li key={idx} className="text-sm text-gray-600 flex items-start gap-2">

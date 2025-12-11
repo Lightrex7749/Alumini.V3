@@ -278,11 +278,11 @@ const AdminUsers = () => {
                             data-testid="select-all-checkbox"
                           />
                         </th>
-                        <th className="pb-3 font-medium text-gray-700">Email</th>
-                        <th className="pb-3 font-medium text-gray-700">Role</th>
-                        <th className="pb-3 font-medium text-gray-700">Status</th>
-                        <th className="pb-3 font-medium text-gray-700">Joined</th>
-                        <th className="pb-3 font-medium text-gray-700">Actions</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Email</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Role</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Status</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Joined</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Actions</th>
                       </tr>
                     </thead>
                     <tbody>

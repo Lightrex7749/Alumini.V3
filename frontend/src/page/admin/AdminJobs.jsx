@@ -196,13 +196,13 @@ const AdminJobs = () => {
                   <table className="w-full">
                     <thead className="border-b">
                       <tr className="text-left">
-                        <th className="pb-3 font-medium text-gray-700">Job Title</th>
-                        <th className="pb-3 font-medium text-gray-700">Company</th>
-                        <th className="pb-3 font-medium text-gray-700">Type</th>
-                        <th className="pb-3 font-medium text-gray-700">Status</th>
-                        <th className="pb-3 font-medium text-gray-700">Applications</th>
-                        <th className="pb-3 font-medium text-gray-700">Posted</th>
-                        <th className="pb-3 font-medium text-gray-700">Actions</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Job Title</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Company</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Type</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Status</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Applications</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Posted</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Actions</th>
                       </tr>
                     </thead>
                     <tbody>

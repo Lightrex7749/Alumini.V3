@@ -308,13 +308,13 @@ const AdminNotifications = () => {
                   <table className="w-full">
                     <thead className="border-b">
                       <tr className="text-left">
-                        <th className="pb-3 font-medium text-gray-700">Title</th>
-                        <th className="pb-3 font-medium text-gray-700">Type</th>
-                        <th className="pb-3 font-medium text-gray-700">Priority</th>
-                        <th className="pb-3 font-medium text-gray-700">Recipient</th>
-                        <th className="pb-3 font-medium text-gray-700">Status</th>
-                        <th className="pb-3 font-medium text-gray-700">Created</th>
-                        <th className="pb-3 font-medium text-gray-700">Actions</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Title</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Type</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Priority</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Recipient</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Status</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Created</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Actions</th>
                       </tr>
                     </thead>
                     <tbody>

@@ -310,11 +310,11 @@ const AdminMentorship = () => {
                       <table className="w-full">
                         <thead className="border-b">
                           <tr className="text-left">
-                            <th className="pb-3 font-medium text-gray-700">Date</th>
-                            <th className="pb-3 font-medium text-gray-700">Duration</th>
-                            <th className="pb-3 font-medium text-gray-700">Status</th>
-                            <th className="pb-3 font-medium text-gray-700">Rating</th>
-                            <th className="pb-3 font-medium text-gray-700">Agenda</th>
+                            <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Date</th>
+                            <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Duration</th>
+                            <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Status</th>
+                            <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Rating</th>
+                            <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Agenda</th>
                           </tr>
                         </thead>
                         <tbody>

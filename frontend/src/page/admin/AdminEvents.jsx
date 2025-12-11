@@ -196,12 +196,12 @@ const AdminEvents = () => {
                   <table className="w-full">
                     <thead className="border-b">
                       <tr className="text-left">
-                        <th className="pb-3 font-medium text-gray-700">Event Title</th>
-                        <th className="pb-3 font-medium text-gray-700">Type</th>
-                        <th className="pb-3 font-medium text-gray-700">Location</th>
-                        <th className="pb-3 font-medium text-gray-700">Date</th>
-                        <th className="pb-3 font-medium text-gray-700">Status</th>
-                        <th className="pb-3 font-medium text-gray-700">Attendees</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Event Title</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Type</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Location</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Date</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Status</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Attendees</th>
                         <th className="pb-3 font-medium text-gray-700">Actions</th>
                       </tr>
                     </thead>

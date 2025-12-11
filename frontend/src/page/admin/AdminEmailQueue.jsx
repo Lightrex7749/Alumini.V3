@@ -261,13 +261,13 @@ const AdminEmailQueue = () => {
                   <table className="w-full">
                     <thead className="border-b">
                       <tr className="text-left">
-                        <th className="pb-3 font-medium text-gray-700">Recipient</th>
-                        <th className="pb-3 font-medium text-gray-700">Subject</th>
-                        <th className="pb-3 font-medium text-gray-700">Template</th>
-                        <th className="pb-3 font-medium text-gray-700">Status</th>
-                        <th className="pb-3 font-medium text-gray-700">Scheduled</th>
-                        <th className="pb-3 font-medium text-gray-700">Retries</th>
-                        <th className="pb-3 font-medium text-gray-700">Actions</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Recipient</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Subject</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Template</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Status</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Scheduled</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Retries</th>
+                        <th className="pb-3 font-medium text-gray-700 dark:text-gray-300">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
